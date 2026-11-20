@@ -1,34 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ADVIR</title>
-  <meta name="description" content="ADVIR" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32,6 56,19 56,45 32,58 8,45 8,19' fill='%231e2127' stroke='%234a515e' stroke-width='2'/%3E%3Cpolyline points='8,19 32,32 56,19' fill='none' stroke='%235a6270' stroke-width='2'/%3E%3Cline x1='32' y1='32' x2='32' y2='58' stroke='%233a3f4a' stroke-width='2'/%3E%3C/svg%3E" />
+  <meta name="description" content="ADVIR — Middle East Mission & Field Operations Network" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32,6 56,19 56,45 32,58 8,45 8,19' fill='%231c1e22' stroke='%23454a54' stroke-width='2'/%3E%3Cpolyline points='8,19 32,32 56,19' fill='none' stroke='%23525864' stroke-width='2'/%3E%3Cline x1='32' y1='32' x2='32' y2='58' stroke='%23383c45' stroke-width='2'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      /* Paleta Típica Oriente Médio + Alta Tecnologia */
-      --bg-obsidian: #070504;
-      --bg-desert-night: #0f0b08;
-      --bg-panel: rgba(20, 14, 10, 0.78);
-      --gold-bright: #f5d77f;
-      --gold-arabian: #d4af37;
-      --gold-deep: #9e7b1c;
-      --terracotta: #d96b38;
-      --turquoise-persian: #00e5d1;
-      --lapis-glow: #1b8a9d;
-      --sand-light: #f6efe2;
-      --sand-muted: #bba98e;
-      --border-gold: rgba(212, 175, 55, 0.28);
-      --border-turq: rgba(0, 229, 209, 0.28);
+      /* Matte Middle Eastern Palette — Flat, Earthy, Zero Gloss */
+      --bg-black: #000000;
+      --bg-basalt: #110e0b;
+      --bg-surface: #17130f;
+      --bg-surface-alt: #1d1813;
+      --bg-surface-hover: #231d17;
+      --border-matte: #2d251d;
+      --border-accent: #5c4930;
+      --ochre-matte: #c49a52;
+      --terracotta-matte: #a85834;
+      --sand-primary: #e6dccb;
+      --sand-secondary: #9c8e7b;
+      --sand-muted: #6e6355;
+      --olive-matte: #738265;
       --font-display: 'Cinzel', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
     }
 
     *, *::before, *::after {
@@ -40,8 +40,8 @@
     html, body {
       width: 100%;
       min-height: 100vh;
-      background-color: #000000;
-      color: var(--sand-light);
+      background-color: var(--bg-black);
+      color: var(--sand-primary);
       font-family: var(--font-sans);
       overflow-x: hidden;
       line-height: 1.6;
@@ -54,7 +54,7 @@
     }
 
     /* =========================================================================
-       TELA 1: GATEWAY STEALTH — PÁGINA TODA PRETA COM O CUBO CHUMBO ESCURO 3D
+       LAYER 1: STEALTH GATEWAY — PURE BLACK PAGE WITH DARK LEAD 3D CUBE
        ========================================================================= */
     #stealthCubeGate {
       position: fixed;
@@ -68,7 +68,7 @@
       justify-content: center;
       overflow: hidden;
       user-select: none;
-      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.85s ease;
+      transition: opacity 0.65s ease, visibility 0.65s ease;
     }
 
     #stealthCubeGate.unlocked {
@@ -77,42 +77,21 @@
       pointer-events: none;
     }
 
-    /* Efeito bem suave de luz ao fundo do cubo */
+    /* Very soft background light behind the dark lead cube */
     .gate-ambient-light {
       position: absolute;
-      width: min(62vw, 520px);
-      height: min(62vw, 520px);
+      width: min(56vw, 460px);
+      height: min(56vw, 460px);
       border-radius: 50%;
       background: radial-gradient(
         circle,
-        rgba(155, 168, 188, 0.105) 0%,
-        rgba(110, 122, 140, 0.055) 32%,
-        rgba(55, 62, 74, 0.022) 58%,
+        rgba(145, 156, 172, 0.085) 0%,
+        rgba(95, 105, 118, 0.04) 36%,
+        rgba(40, 45, 52, 0.015) 62%,
         rgba(0, 0, 0, 0) 80%
       );
-      filter: blur(26px);
+      filter: blur(24px);
       pointer-events: none;
-      animation: breatheGate 8s ease-in-out infinite alternate;
-    }
-
-    .gate-ambient-core {
-      position: absolute;
-      width: min(34vw, 260px);
-      height: min(34vw, 260px);
-      border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(185, 198, 218, 0.075) 0%,
-        rgba(95, 106, 122, 0.025) 55%,
-        rgba(0, 0, 0, 0) 100%
-      );
-      filter: blur(16px);
-      pointer-events: none;
-    }
-
-    @keyframes breatheGate {
-      0% { transform: scale(0.95); opacity: 0.82; }
-      100% { transform: scale(1.05); opacity: 1; }
     }
 
     #gateCubeCanvas {
@@ -121,17 +100,30 @@
       display: block;
     }
 
+    /* Subtle flat flash transition */
+    .flat-transition {
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      pointer-events: none;
+      background-color: #c49a52;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .flat-transition.active {
+      opacity: 0.22;
+    }
+
     /* =========================================================================
-       TELA 2: PORTAL TECNOLÓGICO MISSÃO NO ORIENTE MÉDIO (Oculto até clicar no cubo)
+       LAYER 2: FLAT, CLEAN MIDDLE EAST MISSION PORTAL WITH PYRAMIDS BACKGROUND
        ========================================================================= */
     #missionPortal {
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      transform: scale(0.97);
-      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.9s;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
       min-height: 100vh;
-      background-color: var(--bg-obsidian);
+      background-color: var(--bg-basalt);
       position: relative;
     }
 
@@ -139,1025 +131,726 @@
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
-      transform: scale(1);
     }
 
-    /* Flash Burst Effect */
-    .flash-burst {
+    /* Pyramids Background Layer (Real Photography + Vector Architectural Silhouette) */
+    .pyramids-backdrop {
       position: fixed;
       inset: 0;
-      z-index: 1000;
+      z-index: 0;
       pointer-events: none;
-      background: radial-gradient(
-        circle at center,
-        rgba(255, 244, 200, 0.95) 0%,
-        rgba(245, 215, 127, 0.72) 28%,
-        rgba(217, 107, 56, 0.35) 58%,
-        rgba(0, 229, 209, 0.15) 80%,
-        transparent 100%
-      );
-      opacity: 0;
-      transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .flash-burst.active {
-      opacity: 1;
+      background-color: var(--bg-basalt);
+      background-image:
+        linear-gradient(180deg, rgba(17, 14, 11, 0.80) 0%, rgba(17, 14, 11, 0.68) 45%, rgba(17, 14, 11, 0.94) 100%),
+        url("https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=2000&q=80");
+      background-size: cover;
+      background-position: center 38%;
+      background-repeat: no-repeat;
+      filter: saturate(0.55) contrast(0.95);
     }
 
-    /* Background Canvas Global (Partículas de Areia Dourada & Geometria) */
-    #bgCanvas {
+    /* Vector Pyramids Horizon Silhouette (Always visible, crisp, flat architectural feel) */
+    .pyramids-vector-horizon {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 44vh;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    /* Subtle drifting desert dust canvas */
+    #dustCanvas {
       position: fixed;
       inset: 0;
       width: 100vw;
       height: 100vh;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    /* Padrão Geométrico Mashrabiya / Oriente Médio em SVG overlay */
-    .mashrabiya-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.055;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='1'%3E%3Cpolygon points='40,4 50,26 72,16 62,38 80,40 62,42 72,64 50,54 40,76 30,54 8,64 18,42 0,40 18,38 8,16 30,26'/%3E%3Ccircle cx='40' cy='40' r='12'/%3E%3C/g%3E%3C/svg%3E");
-    }
-
-    .scanline-bar {
-      position: fixed;
-      inset: 0;
       z-index: 1;
       pointer-events: none;
-      background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(212, 175, 55, 0.025) 50%,
-        transparent 100%
-      );
-      background-size: 100% 6px;
     }
 
-    /* Top HUD Navigation Bar */
-    .hud-header {
+    /* Flat Top Navigation Bar */
+    .top-bar {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(9, 6, 4, 0.84);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border-gold);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65);
-    }
-
-    .hud-header::after {
-      content: "";
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold-bright), var(--turquoise-persian), var(--terracotta), transparent);
-      background-size: 200% 100%;
-      animation: hudBeam 6s linear infinite;
-    }
-
-    @keyframes hudBeam {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
+      background-color: #14100c;
+      border-bottom: 1px solid var(--border-matte);
     }
 
     .container {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px;
       position: relative;
       z-index: 2;
     }
 
-    .nav-row {
+    .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 14px 0;
+      height: 68px;
       flex-wrap: wrap;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       text-decoration: none;
-      color: var(--sand-light);
+      color: var(--sand-primary);
     }
 
-    .brand-emblem {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      position: relative;
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      background-color: var(--bg-surface-alt);
+      border: 1px solid var(--border-accent);
       display: grid;
       place-items: center;
-      background: radial-gradient(circle at 30% 30%, rgba(245, 215, 127, 0.25), rgba(20, 14, 10, 0.95));
-      border: 1px solid var(--gold-arabian);
-      box-shadow: 0 0 18px rgba(212, 175, 55, 0.28);
-      overflow: hidden;
     }
 
-    .brand-emblem svg {
-      width: 28px;
-      height: 28px;
-      animation: slowSpin 18s linear infinite;
+    .brand-mark svg {
+      width: 20px;
+      height: 20px;
     }
 
-    @keyframes slowSpin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .brand-text h1 {
+    .brand-title {
       font-family: var(--font-display);
-      font-size: 1.25rem;
+      font-size: 1.15rem;
+      font-weight: 600;
       letter-spacing: 2.5px;
-      background: linear-gradient(90deg, var(--gold-bright), var(--gold-arabian), var(--terracotta));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      line-height: 1.1;
+      color: var(--sand-primary);
     }
 
-    .brand-text span {
-      display: block;
+    .brand-sub {
       font-family: var(--font-mono);
       font-size: 0.68rem;
-      color: var(--turquoise-persian);
-      letter-spacing: 1.4px;
+      color: var(--ochre-matte);
+      letter-spacing: 1px;
       text-transform: uppercase;
-      margin-top: 2px;
+      margin-left: 8px;
+      padding-left: 8px;
+      border-left: 1px solid var(--border-matte);
     }
 
-    .nav-links {
+    .nav-menu {
       display: flex;
       align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
+      gap: 4px;
     }
 
-    .nav-link {
-      color: var(--sand-muted);
+    .nav-item {
+      color: var(--sand-secondary);
       text-decoration: none;
       font-size: 0.84rem;
       font-weight: 500;
-      padding: 8px 14px;
-      border-radius: 999px;
+      padding: 7px 14px;
       border: 1px solid transparent;
-      transition: all 0.25s ease;
+      transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
     }
 
-    .nav-link:hover {
-      color: var(--gold-bright);
-      border-color: var(--border-gold);
-      background: rgba(212, 175, 55, 0.1);
-      box-shadow: 0 0 16px rgba(212, 175, 55, 0.18);
+    .nav-item:hover {
+      color: var(--sand-primary);
+      background-color: var(--bg-surface-alt);
+      border-color: var(--border-matte);
     }
 
-    .hud-controls {
+    .nav-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      gap: 8px;
     }
 
-    .lang-switcher {
+    .lang-group {
       display: flex;
-      background: rgba(15, 11, 8, 0.9);
-      border: 1px solid var(--border-gold);
-      border-radius: 999px;
-      padding: 3px;
-      gap: 2px;
+      border: 1px solid var(--border-matte);
+      background-color: var(--bg-basalt);
     }
 
     .lang-btn {
       background: transparent;
       border: none;
-      color: var(--sand-muted);
+      color: var(--sand-secondary);
       font-family: var(--font-mono);
       font-size: 0.72rem;
-      padding: 5px 10px;
-      border-radius: 999px;
+      padding: 6px 10px;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: background-color 0.15s ease, color 0.15s ease;
     }
 
     .lang-btn.active {
-      background: linear-gradient(135deg, var(--gold-arabian), var(--terracotta));
-      color: #090604;
-      font-weight: 700;
-      box-shadow: 0 0 12px rgba(212, 175, 55, 0.45);
+      background-color: var(--ochre-matte);
+      color: #110e0b;
+      font-weight: 600;
     }
 
-    .sfx-btn {
-      background: rgba(15, 11, 8, 0.85);
-      border: 1px solid var(--border-turq);
-      color: var(--turquoise-persian);
+    .flat-btn-sm {
+      background-color: var(--bg-surface-alt);
+      border: 1px solid var(--border-matte);
+      color: var(--sand-secondary);
       font-family: var(--font-mono);
       font-size: 0.72rem;
-      padding: 7px 12px;
-      border-radius: 999px;
+      padding: 6px 12px;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.25s ease;
+      transition: all 0.15s ease;
     }
 
-    .sfx-btn:hover {
-      background: rgba(0, 229, 209, 0.14);
-      box-shadow: 0 0 14px rgba(0, 229, 209, 0.35);
+    .flat-btn-sm:hover {
+      color: var(--sand-primary);
+      border-color: var(--ochre-matte);
     }
 
-    .sfx-btn.lock-btn {
-      border-color: var(--border-gold);
-      color: var(--gold-bright);
-    }
-
-    .sfx-btn.lock-btn:hover {
-      background: rgba(212, 175, 55, 0.16);
-      box-shadow: 0 0 14px rgba(212, 175, 55, 0.35);
-    }
-
-    /* Live Ticker Oriente Médio */
-    .telemetry-ticker {
-      background: rgba(14, 10, 7, 0.92);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.16);
+    /* Sub-header Telemetry Strip */
+    .status-strip {
+      background-color: rgba(20, 16, 12, 0.92);
+      border-bottom: 1px solid var(--border-matte);
       font-family: var(--font-mono);
-      font-size: 0.73rem;
-      color: var(--sand-muted);
-      padding: 6px 0;
-      overflow: hidden;
+      font-size: 0.72rem;
+      color: var(--sand-secondary);
+      padding: 8px 0;
       position: relative;
       z-index: 2;
     }
 
-    .ticker-track {
+    .status-strip-inner {
       display: flex;
       align-items: center;
-      gap: 36px;
-      white-space: nowrap;
-      animation: tickerMove 38s linear infinite;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    @keyframes tickerMove {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .ticker-item {
+    .status-indicator {
       display: inline-flex;
       align-items: center;
       gap: 8px;
     }
 
-    .pulse-dot {
+    .matte-dot {
       width: 7px;
       height: 7px;
-      border-radius: 50%;
-      background: var(--turquoise-persian);
-      box-shadow: 0 0 8px var(--turquoise-persian);
-      animation: blink 1.6s infinite;
+      background-color: var(--ochre-matte);
+      display: inline-block;
     }
 
-    .pulse-dot.gold {
-      background: var(--gold-bright);
-      box-shadow: 0 0 8px var(--gold-bright);
+    .matte-dot.olive {
+      background-color: var(--olive-matte);
     }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(0.8); }
-    }
-
-    /* HERO SECTION */
-    .hero-section {
-      padding: 48px 0 36px;
-      position: relative;
+    /* HERO SECTION — Flat, Architectural, Clean */
+    .hero {
+      padding: 52px 0 36px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 28px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
       align-items: stretch;
     }
 
-    .cyber-panel {
-      background: var(--bg-panel);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--border-gold);
-      border-radius: 20px;
+    .flat-panel {
+      background-color: rgba(23, 19, 15, 0.90);
+      border: 1px solid var(--border-matte);
       padding: 32px;
       position: relative;
-      overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(245, 215, 127, 0.15);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .cyber-panel::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 60px;
-      height: 60px;
-      border-top: 2px solid var(--gold-bright);
-      border-left: 2px solid var(--gold-bright);
-      border-top-left-radius: 20px;
-      pointer-events: none;
-      opacity: 0.7;
-    }
-
-    .cyber-panel::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 60px;
-      height: 60px;
-      border-bottom: 2px solid var(--turquoise-persian);
-      border-right: 2px solid var(--turquoise-persian);
-      border-bottom-right-radius: 20px;
-      pointer-events: none;
-      opacity: 0.7;
-    }
-
-    /* Flash light sweep on hover */
-    .flash-card {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .flash-card .sweep {
-      position: absolute;
-      top: 0;
-      left: -120%;
-      width: 80%;
-      height: 100%;
-      background: linear-gradient(
-        115deg,
-        transparent 0%,
-        rgba(245, 215, 127, 0.05) 35%,
-        rgba(245, 215, 127, 0.22) 50%,
-        rgba(0, 229, 209, 0.08) 65%,
-        transparent 100%
-      );
-      transform: skewX(-20deg);
-      transition: left 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-      pointer-events: none;
-    }
-
-    .flash-card:hover .sweep {
-      left: 140%;
-    }
-
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: rgba(212, 175, 55, 0.12);
-      border: 1px solid rgba(212, 175, 55, 0.4);
+    .kicker {
       font-family: var(--font-mono);
       font-size: 0.74rem;
-      color: var(--gold-bright);
-      letter-spacing: 1px;
+      color: var(--ochre-matte);
       text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .script-banner {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--terracotta);
-      margin-bottom: 10px;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.8px;
+      display: block;
+      margin-bottom: 12px;
     }
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 3.6vw, 3.1rem);
-      line-height: 1.12;
-      margin-bottom: 18px;
-      color: var(--sand-light);
-      text-shadow: 0 0 28px rgba(212, 175, 55, 0.22);
+      font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.16;
+      color: var(--sand-primary);
+      margin-bottom: 16px;
     }
 
-    .hero-title .gold-gradient {
-      background: linear-gradient(95deg, var(--gold-bright) 0%, var(--gold-arabian) 45%, var(--terracotta) 90%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .hero-title span {
+      color: var(--ochre-matte);
     }
 
-    .hero-desc {
-      color: var(--sand-muted);
-      font-size: 1.02rem;
-      margin-bottom: 24px;
-      max-width: 62ch;
+    .hero-lead {
+      color: var(--sand-secondary);
+      font-size: 0.98rem;
+      margin-bottom: 26px;
+      max-width: 60ch;
     }
 
-    .cta-group {
+    .btn-row {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
 
-    .btn-flash {
-      position: relative;
+    .btn-flat {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 13px 24px;
-      border-radius: 12px;
+      gap: 8px;
+      padding: 12px 20px;
       font-family: var(--font-mono);
-      font-size: 0.84rem;
-      font-weight: 700;
-      letter-spacing: 0.8px;
+      font-size: 0.8rem;
+      font-weight: 500;
       text-transform: uppercase;
+      letter-spacing: 0.8px;
       text-decoration: none;
       cursor: pointer;
-      overflow: hidden;
-      transition: all 0.25s ease;
+      border: 1px solid var(--border-matte);
+      background-color: var(--bg-surface-alt);
+      color: var(--sand-primary);
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     }
 
-    .btn-flash.primary {
-      background: linear-gradient(135deg, var(--gold-bright), var(--gold-arabian), var(--terracotta));
-      color: #090604;
-      border: 1px solid var(--gold-bright);
-      box-shadow: 0 0 24px rgba(212, 175, 55, 0.4);
+    .btn-flat:hover {
+      background-color: var(--bg-surface-hover);
+      border-color: var(--ochre-matte);
     }
 
-    .btn-flash.primary:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 0 36px rgba(245, 215, 127, 0.75);
+    .btn-flat.primary {
+      background-color: var(--ochre-matte);
+      border-color: var(--ochre-matte);
+      color: #110e0b;
+      font-weight: 600;
     }
 
-    .btn-flash.secondary {
-      background: rgba(0, 229, 209, 0.09);
-      color: var(--turquoise-persian);
-      border: 1px solid var(--turquoise-persian);
-      box-shadow: 0 0 18px rgba(0, 229, 209, 0.18);
+    .btn-flat.primary:hover {
+      background-color: #d1a862;
     }
 
-    .btn-flash.secondary:hover {
-      background: rgba(0, 229, 209, 0.2);
-      transform: translateY(-2px);
-      box-shadow: 0 0 28px rgba(0, 229, 209, 0.45);
+    .btn-flat.terracotta {
+      background-color: var(--terracotta-matte);
+      border-color: var(--terracotta-matte);
+      color: var(--sand-primary);
     }
 
-    .btn-flash.ghost {
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--sand-light);
-      border: 1px solid var(--border-gold);
-    }
-
-    .btn-flash.ghost:hover {
-      border-color: var(--gold-bright);
-      color: var(--gold-bright);
-      background: rgba(212, 175, 55, 0.12);
-    }
-
-    .hero-metrics {
+    .metrics-bar {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      gap: 12px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border-matte);
     }
 
-    .metric-box {
-      background: rgba(11, 8, 5, 0.7);
-      border: 1px solid rgba(212, 175, 55, 0.22);
-      border-radius: 12px;
+    .metric-cell {
+      background-color: var(--bg-basalt);
+      border: 1px solid var(--border-matte);
       padding: 12px 14px;
     }
 
-    .metric-val {
+    .metric-num {
       font-family: var(--font-mono);
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: var(--gold-bright);
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--ochre-matte);
     }
 
-    .metric-label {
-      font-size: 0.75rem;
-      color: var(--sand-muted);
+    .metric-caption {
+      font-size: 0.74rem;
+      color: var(--sand-secondary);
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.6px;
+      margin-top: 2px;
     }
 
-    /* Painel Direito: Holograma 3D / Radar Oriente Médio */
-    .holo-deck {
+    /* Right Panel: Flat Tactical Vector Map & Pyramid Wireframe */
+    .tactical-panel {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 22px;
-      background: radial-gradient(circle at 50% 42%, rgba(212, 175, 55, 0.14), rgba(0, 229, 209, 0.05) 45%, rgba(12, 9, 6, 0.92) 85%);
+      background-color: rgba(20, 16, 12, 0.90);
+      border: 1px solid var(--border-matte);
     }
 
-    .holo-header {
+    .tactical-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 8px;
       font-family: var(--font-mono);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
+      color: var(--sand-secondary);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-matte);
+      margin-bottom: 12px;
     }
 
-    .holo-title {
-      color: var(--gold-bright);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      letter-spacing: 1px;
-    }
-
-    .holo-coords {
-      color: var(--turquoise-persian);
-    }
-
-    .canvas-stage {
+    .tactical-stage {
       position: relative;
       width: 100%;
-      height: 360px;
-      border-radius: 14px;
-      border: 1px solid rgba(212, 175, 55, 0.24);
-      background: radial-gradient(circle at center, rgba(24, 17, 11, 0.8), rgba(7, 5, 4, 0.96));
+      height: 330px;
+      background-color: #120f0c;
+      border: 1px solid var(--border-matte);
       overflow: hidden;
-      cursor: grab;
+      cursor: crosshair;
     }
 
-    .canvas-stage:active {
-      cursor: grabbing;
-    }
-
-    #menaHoloCanvas {
+    #menaVectorCanvas {
       width: 100%;
       height: 100%;
       display: block;
     }
 
-    .holo-hud-overlay {
+    .stage-controls {
       position: absolute;
-      bottom: 12px;
-      left: 12px;
-      right: 12px;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 8px;
+      gap: 6px;
       pointer-events: none;
-      font-family: var(--font-mono);
-      font-size: 0.71rem;
     }
 
-    .hud-chip {
-      background: rgba(9, 6, 4, 0.84);
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      color: var(--gold-bright);
-      padding: 5px 10px;
-      border-radius: 8px;
+    .mode-tab {
       pointer-events: auto;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .hud-chip:hover, .hud-chip.active {
-      background: rgba(212, 175, 55, 0.22);
-      border-color: var(--gold-bright);
-      box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
-    }
-
-    .node-inspector {
-      margin-top: 12px;
-      background: rgba(10, 7, 5, 0.88);
-      border: 1px solid var(--border-turq);
-      border-radius: 12px;
-      padding: 12px 14px;
+      background-color: #17130f;
+      border: 1px solid var(--border-matte);
+      color: var(--sand-secondary);
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.68rem;
+      padding: 5px 10px;
+      cursor: pointer;
     }
 
-    .node-inspector-head {
+    .mode-tab.active, .mode-tab:hover {
+      border-color: var(--ochre-matte);
+      color: var(--ochre-matte);
+      background-color: #211b15;
+    }
+
+    .sector-readout {
+      margin-top: 12px;
+      background-color: var(--bg-basalt);
+      border: 1px solid var(--border-matte);
+      padding: 12px 14px;
+    }
+
+    .sector-readout-top {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      color: var(--turquoise-persian);
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      color: var(--ochre-matte);
       margin-bottom: 4px;
-      font-weight: 700;
     }
 
-    .node-inspector-body {
-      color: var(--sand-light);
-      font-family: var(--font-sans);
+    .sector-readout-desc {
       font-size: 0.84rem;
+      color: var(--sand-secondary);
     }
 
-    /* SEÇÕES GERAIS */
-    .section-block {
-      padding: 44px 0;
-      position: relative;
+    /* SECTIONS */
+    .section {
+      padding: 40px 0;
     }
 
-    .section-header {
+    .section-head {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 28px;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-matte);
       flex-wrap: wrap;
-    }
-
-    .section-kicker {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--terracotta);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      display: block;
-      margin-bottom: 6px;
     }
 
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(1.55rem, 2.5vw, 2.2rem);
-      color: var(--sand-light);
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--sand-primary);
     }
 
-    /* CORREDORES DO ORIENTE MÉDIO */
+    /* CORRIDOR CARDS — Flat & Clean */
     .corridors-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      gap: 16px;
     }
 
-    .corridor-card {
-      background: var(--bg-panel);
-      border: 1px solid var(--border-gold);
-      border-radius: 16px;
+    .corridor-box {
+      background-color: rgba(23, 19, 15, 0.90);
+      border: 1px solid var(--border-matte);
       padding: 22px;
-      position: relative;
-      overflow: hidden;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: border-color 0.15s ease, background-color 0.15s ease;
     }
 
-    .corridor-card:hover, .corridor-card.selected {
-      transform: translateY(-6px);
-      border-color: var(--gold-bright);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(212, 175, 55, 0.25);
+    .corridor-box:hover, .corridor-box.active {
+      background-color: rgba(31, 25, 20, 0.95);
+      border-color: var(--ochre-matte);
     }
 
-    .corridor-top {
+    .corridor-meta {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      margin-bottom: 12px;
-    }
-
-    .corridor-code {
+      align-items: center;
       font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--turquoise-persian);
-      padding: 3px 8px;
-      border-radius: 6px;
-      background: rgba(0, 229, 209, 0.1);
-      border: 1px solid rgba(0, 229, 209, 0.3);
+      font-size: 0.7rem;
+      color: var(--ochre-matte);
+      margin-bottom: 10px;
     }
 
-    .corridor-arabic {
-      font-size: 1.1rem;
-      color: var(--gold-bright);
-      font-weight: 600;
-    }
-
-    .corridor-card h3 {
+    .corridor-box h3 {
       font-family: var(--font-display);
-      font-size: 1.15rem;
+      font-size: 1.08rem;
+      color: var(--sand-primary);
       margin-bottom: 8px;
-      color: var(--sand-light);
     }
 
-    .corridor-card p {
-      font-size: 0.87rem;
-      color: var(--sand-muted);
+    .corridor-box p {
+      font-size: 0.86rem;
+      color: var(--sand-secondary);
       margin-bottom: 14px;
     }
 
-    .corridor-tags {
+    .pill-list {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
     }
 
-    .tag-pill {
+    .flat-pill {
       font-family: var(--font-mono);
-      font-size: 0.68rem;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: rgba(212, 175, 55, 0.1);
-      border: 1px solid rgba(212, 175, 55, 0.28);
-      color: var(--gold-bright);
+      font-size: 0.67rem;
+      color: var(--sand-secondary);
+      background-color: var(--bg-basalt);
+      border: 1px solid var(--border-matte);
+      padding: 2px 8px;
     }
 
-    /* BARRAS DE TELEMETRIA ESPIRITUAL & OPERACIONAL */
-    .telemetry-split {
+    /* TELEMETRY & FIELD LOG */
+    .two-col {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 24px;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
 
-    .progress-item {
-      margin-bottom: 20px;
+    .bar-group {
+      margin-bottom: 18px;
     }
 
-    .progress-head {
+    .bar-label {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 0.86rem;
+      color: var(--sand-primary);
+      margin-bottom: 6px;
     }
 
-    .progress-head span.pct {
+    .bar-label span.mono {
       font-family: var(--font-mono);
-      color: var(--gold-bright);
+      color: var(--ochre-matte);
     }
 
-    .progress-track {
+    .bar-outer {
       width: 100%;
-      height: 12px;
-      background: rgba(10, 7, 5, 0.9);
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      border-radius: 999px;
-      overflow: hidden;
-      position: relative;
+      height: 10px;
+      background-color: var(--bg-basalt);
+      border: 1px solid var(--border-matte);
     }
 
-    .progress-fill {
+    .bar-inner {
       height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--terracotta), var(--gold-arabian), var(--gold-bright));
-      box-shadow: 0 0 16px rgba(245, 215, 127, 0.6);
-      position: relative;
-      transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+      background-color: var(--ochre-matte);
+      transition: width 0.8s ease;
     }
 
-    .progress-fill.turq {
-      background: linear-gradient(90deg, var(--lapis-glow), var(--turquoise-persian));
-      box-shadow: 0 0 16px rgba(0, 229, 209, 0.6);
+    .bar-inner.terracotta {
+      background-color: var(--terracotta-matte);
     }
 
-    /* Terminal de Operações em Tempo Real */
-    .terminal-window {
-      background: rgba(8, 6, 4, 0.94);
-      border: 1px solid var(--border-turq);
-      border-radius: 16px;
-      overflow: hidden;
+    .bar-inner.olive {
+      background-color: var(--olive-matte);
+    }
+
+    /* Flat Console */
+    .console-box {
+      background-color: rgba(17, 14, 11, 0.94);
+      border: 1px solid var(--border-matte);
       display: flex;
       flex-direction: column;
-      height: 100%;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+      justify-content: space-between;
     }
 
-    .terminal-bar {
-      background: rgba(20, 15, 11, 0.95);
+    .console-top {
       padding: 10px 16px;
-      border-bottom: 1px solid rgba(0, 229, 209, 0.22);
+      background-color: var(--bg-surface);
+      border-bottom: 1px solid var(--border-matte);
       display: flex;
-      align-items: center;
       justify-content: space-between;
       font-family: var(--font-mono);
-      font-size: 0.74rem;
-      color: var(--turquoise-persian);
+      font-size: 0.72rem;
+      color: var(--sand-secondary);
     }
 
-    .term-dots {
-      display: flex;
-      gap: 6px;
-    }
-
-    .term-dots span {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .terminal-log {
+    .console-feed {
       padding: 16px;
       font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: #d6e8e6;
-      flex: 1;
-      max-height: 270px;
+      font-size: 0.76rem;
+      color: var(--sand-secondary);
+      height: 240px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
 
-    .log-line {
-      line-height: 1.45;
-      border-left: 2px solid rgba(0, 229, 209, 0.4);
+    .feed-entry {
+      border-left: 2px solid var(--ochre-matte);
       padding-left: 10px;
-      animation: fadeInLine 0.35s ease;
+      line-height: 1.45;
     }
 
-    .log-line .ts {
-      color: var(--gold-arabian);
-      margin-right: 6px;
+    .feed-entry strong {
+      color: var(--sand-primary);
     }
 
-    .log-line .loc {
-      color: var(--turquoise-persian);
-      font-weight: 700;
-      margin-right: 6px;
-    }
-
-    @keyframes fadeInLine {
-      from { opacity: 0; transform: translateX(-6px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    .terminal-actions {
-      padding: 12px 16px;
-      border-top: 1px solid rgba(212, 175, 55, 0.16);
+    .console-foot {
+      padding: 10px 16px;
+      border-top: 1px solid var(--border-matte);
+      background-color: var(--bg-surface);
       display: flex;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
-      background: rgba(14, 10, 7, 0.9);
     }
 
-    /* FRENTES DE MISSÃO */
+    /* MISSION PILLARS */
     .pillars-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 16px;
     }
 
-    .pillar-card {
-      background: var(--bg-panel);
-      border: 1px solid var(--border-gold);
-      border-radius: 18px;
-      padding: 26px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
+    .pillar-box {
+      background-color: rgba(23, 19, 15, 0.90);
+      border: 1px solid var(--border-matte);
+      padding: 24px;
     }
 
-    .pillar-card:hover {
-      border-color: var(--gold-bright);
-      transform: translateY(-5px);
-      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.7), 0 0 24px rgba(212, 175, 55, 0.2);
-    }
-
-    .pillar-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(217, 107, 56, 0.15));
-      border: 1px solid var(--gold-arabian);
-      display: grid;
-      place-items: center;
-      margin-bottom: 16px;
-      color: var(--gold-bright);
-      font-size: 1.35rem;
-    }
-
-    .pillar-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
+    .pillar-num {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ochre-matte);
       margin-bottom: 10px;
-      color: var(--sand-light);
+      display: block;
     }
 
-    .pillar-card p {
-      font-size: 0.9rem;
-      color: var(--sand-muted);
-      margin-bottom: 16px;
+    .pillar-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.12rem;
+      margin-bottom: 8px;
+      color: var(--sand-primary);
     }
 
-    /* CONTATO & TRANSMISSÃO */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 24px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .input-group {
+    .pillar-box p {
+      font-size: 0.87rem;
+      color: var(--sand-secondary);
       margin-bottom: 14px;
     }
 
-    .input-group label {
+    /* CONTACT FORM */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .field-block {
+      margin-bottom: 12px;
+    }
+
+    .field-block label {
       display: block;
       font-family: var(--font-mono);
-      font-size: 0.74rem;
-      color: var(--gold-bright);
+      font-size: 0.71rem;
+      color: var(--sand-secondary);
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
-    .cyber-input {
+    .flat-input {
       width: 100%;
-      background: rgba(9, 6, 4, 0.85);
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      border-radius: 10px;
-      padding: 12px 14px;
-      color: var(--sand-light);
+      background-color: var(--bg-basalt);
+      border: 1px solid var(--border-matte);
+      padding: 10px 12px;
+      color: var(--sand-primary);
       font-family: var(--font-sans);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       outline: none;
-      transition: all 0.2s ease;
     }
 
-    .cyber-input:focus {
-      border-color: var(--turquoise-persian);
-      box-shadow: 0 0 16px rgba(0, 229, 209, 0.25);
+    .flat-input:focus {
+      border-color: var(--ochre-matte);
     }
 
-    textarea.cyber-input {
-      min-height: 120px;
+    textarea.flat-input {
+      min-height: 110px;
       resize: vertical;
     }
 
-    .direct-channels {
+    .contact-list {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      margin-top: 20px;
+      gap: 10px;
+      margin-top: 18px;
     }
 
-    .channel-item {
+    .contact-row {
+      padding: 12px 14px;
+      background-color: var(--bg-basalt);
+      border: 1px solid var(--border-matte);
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 14px;
-      padding: 14px;
-      border-radius: 12px;
-      background: rgba(11, 8, 5, 0.75);
-      border: 1px solid rgba(212, 175, 55, 0.22);
+      font-size: 0.86rem;
     }
 
-    .channel-badge {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: rgba(212, 175, 55, 0.14);
-      border: 1px solid var(--gold-arabian);
-      display: grid;
-      place-items: center;
-      color: var(--gold-bright);
+    .contact-row span.label {
       font-family: var(--font-mono);
-      font-weight: 700;
+      font-size: 0.72rem;
+      color: var(--sand-secondary);
     }
 
     footer {
-      border-top: 1px solid var(--border-gold);
-      background: rgba(7, 5, 4, 0.95);
-      padding: 32px 0 44px;
-      margin-top: 40px;
+      border-top: 1px solid var(--border-matte);
+      background-color: #110e0b;
+      padding: 28px 0 36px;
+      margin-top: 32px;
       position: relative;
       z-index: 2;
     }
 
-    .footer-flex {
+    .footer-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
       flex-wrap: wrap;
-      font-size: 0.85rem;
-      color: var(--sand-muted);
+      gap: 16px;
+      font-size: 0.82rem;
+      color: var(--sand-secondary);
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 980px) {
       .hero-grid,
-      .telemetry-split,
-      .contact-grid {
+      .two-col {
         grid-template-columns: 1fr;
       }
       .corridors-grid {
@@ -1170,460 +863,418 @@
 
     @media (max-width: 640px) {
       .corridors-grid,
-      .hero-metrics,
-      .form-row {
+      .metrics-bar,
+      .form-grid {
         grid-template-columns: 1fr;
       }
-      .cyber-panel {
-        padding: 22px;
+      .flat-panel {
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body class="cube-locked">
-  <!-- Efeito Flash Visual Instantâneo -->
-  <div class="flash-burst" id="flashBurst"></div>
+  <div class="flat-transition" id="flatFlash"></div>
 
   <!-- =======================================================================
-       CAMADA 1: TELA TODA PRETA COM O CUBO CHUMBO ESCURO GIRANDO NO CENTRO
-       (O portal só aparece depois que o usuário clicar no cubo)
+       LAYER 1: STEALTH PITCH-BLACK SCREEN WITH DARK LEAD 3D ROTATING CUBE
+       (Portal only appears after clicking the cube)
        ======================================================================= -->
   <div id="stealthCubeGate">
     <div class="gate-ambient-light"></div>
-    <div class="gate-ambient-core"></div>
     <canvas id="gateCubeCanvas"></canvas>
   </div>
 
   <!-- =======================================================================
-       CAMADA 2: PORTAL TECNOLÓGICO MISSÃO NO ORIENTE MÉDIO
+       LAYER 2: FLAT, MATTE, CLEAN MIDDLE EAST MISSION PORTAL (ENGLISH DEFAULT)
        ======================================================================= -->
   <div id="missionPortal" aria-hidden="true">
-    <canvas id="bgCanvas"></canvas>
-    <div class="mashrabiya-overlay"></div>
-    <div class="scanline-bar"></div>
+    <!-- Giza Pyramids Background & Vector Horizon -->
+    <div class="pyramids-backdrop"></div>
+    <svg class="pyramids-vector-horizon" viewBox="0 0 1440 320" preserveAspectRatio="none">
+      <!-- Matte Giza Pyramids Architectural Silhouette & Technical Grid Lines -->
+      <polygon points="180,320 450,75 720,320" fill="#16120e" stroke="#3a2e21" stroke-width="1" />
+      <polygon points="450,75 450,320 720,320" fill="#120e0b" />
+      <polygon points="560,320 880,38 1200,320" fill="#181410" stroke="#463727" stroke-width="1" />
+      <polygon points="880,38 880,320 1200,320" fill="#130f0c" />
+      <polygon points="1040,320 1220,145 1400,320" fill="#15110d" stroke="#352a1e" stroke-width="1" />
+      <line x1="0" y1="319" x2="1440" y2="319" stroke="#2d251d" stroke-width="2" />
+    </svg>
+    <canvas id="dustCanvas"></canvas>
 
-    <!-- HUD Header -->
-    <header class="hud-header">
-      <div class="container nav-row">
+    <!-- Top Navigation -->
+    <header class="top-bar">
+      <div class="container nav-inner">
         <a href="#top" class="brand">
-          <div class="brand-emblem" aria-hidden="true">
-            <svg viewBox="0 0 64 64" fill="none">
-              <polygon points="32,4 40,24 60,32 40,40 32,60 24,40 4,32 24,24" stroke="#f5d77f" stroke-width="2" fill="rgba(212,175,55,0.12)" />
-              <polygon points="32,12 52,22 52,42 32,52 12,42 12,22" stroke="#00e5d1" stroke-width="1.5" />
-              <circle cx="32" cy="32" r="4" fill="#f5d77f" />
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <polygon points="16,4 28,26 4,26" stroke="#c49a52" stroke-width="1.6" fill="none" />
+              <line x1="16" y1="4" x2="16" y2="26" stroke="#a85834" stroke-width="1.2" />
             </svg>
           </div>
-          <div class="brand-text">
-            <h1>ADVIR</h1>
-            <span data-i18n="nav_sub">MENA Mission & Field Operations</span>
+          <div>
+            <span class="brand-title">ADVIR</span>
+            <span class="brand-sub" data-i18n="nav_sub">Middle East Mission & Field Network</span>
           </div>
         </a>
 
-        <nav class="nav-links" aria-label="Navegação Principal">
-          <a href="#corridors" class="nav-link" data-i18n="nav_corridors">Corredores 10/40</a>
-          <a href="#telemetry" class="nav-link" data-i18n="nav_telemetry">Telemetria & Reino</a>
-          <a href="#missions" class="nav-link" data-i18n="nav_missions">Frentes de Missão</a>
-          <a href="#contact" class="nav-link" data-i18n="nav_contact">Transmissão</a>
+        <nav class="nav-menu" aria-label="Primary Navigation">
+          <a href="#corridors" class="nav-item" data-i18n="nav_corridors">10/40 Corridors</a>
+          <a href="#telemetry" class="nav-item" data-i18n="nav_telemetry">Mission Telemetry</a>
+          <a href="#operations" class="nav-item" data-i18n="nav_operations">Field Operations</a>
+          <a href="#contact" class="nav-item" data-i18n="nav_contact">Contact</a>
         </nav>
 
-        <div class="hud-controls">
-          <div class="lang-switcher" role="group" aria-label="Idioma">
-            <button class="lang-btn active" data-lang="pt">PT</button>
-            <button class="lang-btn" data-lang="en">EN</button>
+        <div class="nav-actions">
+          <div class="lang-group" role="group" aria-label="Language">
+            <button class="lang-btn active" data-lang="en">EN</button>
             <button class="lang-btn" data-lang="ar">عربي</button>
             <button class="lang-btn" data-lang="he">עב</button>
           </div>
-          <button class="sfx-btn" id="toggleAudio" title="Ativar/Desativar efeitos sonoros táticos">
-            <span id="audioIcon">🔊</span> <span id="audioLabel">SFX ON</span>
-          </button>
-          <button class="sfx-btn lock-btn" id="returnToCubeBtn" title="Voltar para a tela preta do Cubo">
-            <span>⬛</span> <span>CUBO</span>
+          <button class="flat-btn-sm" id="lockCubeBtn" title="Return to Stealth Cube">
+            ⬛ CUBE
           </button>
         </div>
       </div>
     </header>
 
-    <!-- Live Telemetry Ticker -->
-    <div class="telemetry-ticker">
-      <div class="ticker-track">
-        <span class="ticker-item"><span class="pulse-dot"></span> <strong>JANELA 10/40:</strong> OPERAÇÃO CONTÍNUA • LEVANTE • PENÍNSULA ARÁBICA • NORTE DA ÁFRICA</span>
-        <span class="ticker-item"><span class="pulse-dot gold"></span> <strong>נור בעולם • النور في الصحراء</strong> — LUZ E SERVIÇO EM CONTEXTOS SENSÍVEIS</span>
-        <span class="ticker-item"><span class="pulse-dot"></span> <strong>PROJETO 167:</strong> MISSÃO DIÁRIA, EDUCAÇÃO, APOIO HUMANITÁRIO E PRESENÇA</span>
-        <span class="ticker-item"><span class="pulse-dot gold"></span> <strong>SAFEGUARDING & ÉTICA:</strong> DIGNIDADE HUMANA • PROTEÇÃO DE IDENTIDADES • PARCERIAS LOCAIS</span>
-        <span class="ticker-item"><span class="pulse-dot"></span> <strong>JANELA 10/40:</strong> OPERAÇÃO CONTÍNUA • LEVANTE • PENÍNSULA ARÁBICA • NORTE DA ÁFRICA</span>
-        <span class="ticker-item"><span class="pulse-dot gold"></span> <strong>נור בעולם • النور في الصحراء</strong> — LUZ E SERVIÇO EM CONTEXTOS SENSÍVEIS</span>
-        <span class="ticker-item"><span class="pulse-dot"></span> <strong>PROJETO 167:</strong> MISSÃO DIÁRIA, EDUCAÇÃO, APOIO HUMANITÁRIO E PRESENÇA</span>
-        <span class="ticker-item"><span class="pulse-dot gold"></span> <strong>SAFEGUARDING & ÉTICA:</strong> DIGNIDADE HUMANA • PROTEÇÃO DE IDENTIDADES • PARCERIAS LOCAIS</span>
+    <!-- Status Strip -->
+    <div class="status-strip">
+      <div class="container status-strip-inner">
+        <span class="status-indicator">
+          <span class="matte-dot"></span>
+          <span>10/40 WINDOW OPERATIONS // GIZA • LEVANT • ARABIAN PENINSULA • NILE VALLEY</span>
+        </span>
+        <span class="status-indicator">
+          <span class="matte-dot olive"></span>
+          <span id="utcClock">UTC 00:00:00</span>
+        </span>
       </div>
     </div>
 
     <main id="top">
       <!-- HERO -->
-      <section class="hero-section">
+      <section class="hero">
         <div class="container hero-grid">
-          <!-- Coluna Esquerda -->
-          <div class="cyber-panel flash-card" id="heroCard">
-            <div class="sweep"></div>
-            <div class="status-badge">
-              <span class="pulse-dot"></span>
-              <span data-i18n="hero_badge">REDE MISSIONÁRIA & HUMANITÁRIA • ORIENTE MÉDIO</span>
-            </div>
-
-            <div class="script-banner">
-              <span>رسالة النور والخدمة</span>
-              <span>•</span>
-              <span>שליחות ואור במזרח התיכון</span>
-            </div>
-
-            <h2 class="hero-title">
-              <span id="scrambleTitle" data-i18n="hero_title_1">Presença viva onde a</span>
-              <span class="gold-gradient" data-i18n="hero_title_2"> Luz encontra o Deserto.</span>
-            </h2>
-
-            <p class="hero-desc" data-i18n="hero_desc">
-              Somos uma rede especializada em frentes de missão, educação, apoio comunitário e resposta humanitária no Oriente Médio e na Janela 10/40. A missão não acontece apenas dentro de instituições — ela é diária, estratégica, movida pelo Espírito e presente em cada fronteira.
+          <div class="flat-panel">
+            <span class="kicker" data-i18n="hero_kicker">FIELD OPERATIONS & SERVICE NETWORK • MENA</span>
+            <h1 class="hero-title">
+              <span id="cipherHeadline" data-i18n="hero_title_1">Quiet presence and active mission</span>
+              <span data-i18n="hero_title_2"> across the Middle East.</span>
+            </h1>
+            <p class="hero-lead" data-i18n="hero_desc">
+              We are a network specialized in front-line mission work, shelter education, humanitarian logistics, and cultural mediation across the Middle East. Mission does not only happen inside institutions—it is daily, accountable, and lived across every border.
             </p>
 
-            <div class="cta-group">
-              <a href="#corridors" class="btn-flash primary" id="triggerPulseBtn">
-                <span>⚡</span> <span data-i18n="cta_explore">Explorar Mapa Tático</span>
+            <div class="btn-row">
+              <a href="#corridors" class="btn-flat primary" id="pulseMapBtn" data-i18n="cta_corridors">
+                Explore Regional Corridors
               </a>
-              <a href="https://open.spotify.com/show/4PDmWobMOAv2zbyaz81rOJ?si=urwtrAlwRIeiZY5MG-s3jg" target="_blank" rel="noopener" class="btn-flash secondary">
-                <span>🎙️</span> <span>Podcast Projeto 167</span>
+              <a href="https://open.spotify.com/show/4PDmWobMOAv2zbyaz81rOJ?si=urwtrAlwRIeiZY5MG-s3jg" target="_blank" rel="noopener" class="btn-flat">
+                Projeto 167 Podcast
               </a>
-              <a href="#contact" class="btn-flash ghost" data-i18n="cta_contact">
-                Conectar à Rede
+              <a href="#contact" class="btn-flat" data-i18n="cta_contact">
+                Direct Transmission
               </a>
             </div>
 
-            <div class="hero-metrics">
-              <div class="metric-box">
-                <div class="metric-val"><span class="counter" data-target="10">10</span>/<span class="counter" data-target="40">40</span>°N</div>
-                <div class="metric-label" data-i18n="metric_1">Janela Estratégica</div>
+            <div class="metrics-bar">
+              <div class="metric-cell">
+                <div class="metric-num">10/40°N</div>
+                <div class="metric-caption" data-i18n="m1_label">Strategic Window</div>
               </div>
-              <div class="metric-box">
-                <div class="metric-val"><span class="counter" data-target="167">167</span>h</div>
-                <div class="metric-label" data-i18n="metric_2">Missão Além do Templo</div>
+              <div class="metric-cell">
+                <div class="metric-num">167 HRS</div>
+                <div class="metric-caption" data-i18n="m2_label">Weekly Field Life</div>
               </div>
-              <div class="metric-box">
-                <div class="metric-val"><span class="counter" data-target="24">24</span>/7</div>
-                <div class="metric-label" data-i18n="metric_3">Intercessão & Campo</div>
+              <div class="metric-cell">
+                <div class="metric-num">6 NODES</div>
+                <div class="metric-caption" data-i18n="m3_label">Active Corridors</div>
               </div>
             </div>
           </div>
 
-          <!-- Coluna Direita: Holograma 3D Interativo Oriente Médio -->
-          <div class="cyber-panel holo-deck">
-            <div class="holo-header">
-              <div class="holo-title">
-                <span class="pulse-dot gold"></span>
-                <span>HOLO-CUBO & RADAR MENA // 32.0°N 35.2°E</span>
-              </div>
-              <div class="holo-coords" id="liveCoords">LAT 31.7683° N • LON 35.2137° E</div>
+          <!-- Tactical Vector Pyramid & Middle East Map Canvas -->
+          <div class="tactical-panel">
+            <div class="tactical-head">
+              <span>VECTOR TELEMETRY // GIZA & LEVANT GRID</span>
+              <span id="activeCoords">29.9792° N, 31.1342° E</span>
             </div>
 
-            <div class="canvas-stage" id="holoStage" title="Arraste para girar o holograma 3D ou clique nos nós do Oriente Médio">
-              <canvas id="menaHoloCanvas"></canvas>
-              <div class="holo-hud-overlay">
-                <div style="display:flex; gap:6px; flex-wrap:wrap">
-                  <button class="hud-chip active" data-mode="hybrid">HÍBRIDO 3D</button>
-                  <button class="hud-chip" data-mode="cube">CUBO TÁTICO</button>
-                  <button class="hud-chip" data-mode="constellation">REDE MENA</button>
+            <div class="tactical-stage" id="vectorStage" title="Click nodes or drag to inspect vector geometry">
+              <canvas id="menaVectorCanvas"></canvas>
+              <div class="stage-controls">
+                <div style="display:flex; gap:6px">
+                  <button class="mode-tab active" data-vmode="pyramid">PYRAMID VECTOR</button>
+                  <button class="mode-tab" data-vmode="network">MENA NODES</button>
                 </div>
-                <button class="hud-chip" id="flashPulseHolo">⚡ PULSO FLASH</button>
+                <button class="mode-tab" id="stepNodeBtn">NEXT SECTOR →</button>
               </div>
             </div>
 
-            <div class="node-inspector" id="nodeInspector">
-              <div class="node-inspector-head">
-                <span id="nodeName">NÓ ATIVO: CORREDOR DO LEVANTE (JERUSALÉM • AMÃ • BEIRUTE)</span>
-                <span id="nodeStatus">● ONLINE</span>
+            <div class="sector-readout">
+              <div class="sector-readout-top">
+                <span id="sectorTitle">ACTIVE SECTOR: CAIRO & GIZA CORRIDOR (القاهرة)</span>
+                <span>STATUS: ACTIVE</span>
               </div>
-              <div class="node-inspector-body" id="nodeDesc">
-                Mediação multicultural, apoio educacional a refugiados, literatura, capacitação de líderes locais e presença cristã resiliente.
+              <div class="sector-readout-desc" id="sectorSummary">
+                Youth leadership training, literacy programs, community health coordination, and local partner support along the Nile corridor.
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CORREDORES DO ORIENTE MÉDIO -->
-      <section class="section-block" id="corridors">
+      <!-- STRATEGIC CORRIDORS -->
+      <section class="section" id="corridors">
         <div class="container">
-          <div class="section-header">
+          <div class="section-head">
             <div>
-              <span class="section-kicker" data-i18n="corridors_kicker">GEOGRAFIA DE ATUAÇÃO • MENA & 10/40</span>
-              <h2 class="section-title" data-i18n="corridors_title">Corredores Estratégicos no Oriente Médio</h2>
+              <span class="kicker" data-i18n="sec1_kicker">REGIONAL ARCHITECTURE</span>
+              <h2 class="section-title" data-i18n="sec1_title">Middle East Field Corridors</h2>
             </div>
-            <button class="btn-flash ghost" id="scanAllCorridors">
-              <span>📡</span> <span data-i18n="btn_scan_all">Varredura Completa de Campo</span>
+            <button class="btn-flat" id="cycleCorridorsBtn" data-i18n="btn_sweep">
+              Run Regional Sweep
             </button>
           </div>
 
           <div class="corridors-grid">
-            <article class="corridor-card flash-card selected" data-corridor="levant">
-              <div class="sweep"></div>
-              <div class="corridor-top">
-                <span class="corridor-code">SETOR 01 // LEVANTE</span>
-                <span class="corridor-arabic">المشرق</span>
+            <article class="corridor-box active" data-node="0">
+              <div class="corridor-meta">
+                <span>SECTOR 01 // EGYPT</span>
+                <span>وادي النيل</span>
               </div>
-              <h3 data-i18n="c1_title">Corredor do Levante</h3>
-              <p data-i18n="c1_desc">Apoio humanitário, educação em abrigos temporários, acolhimento de famílias deslocadas e pontes de reconciliação cultural.</p>
-              <div class="corridor-tags">
-                <span class="tag-pill">Educação</span>
-                <span class="tag-pill">Refugiados</span>
-                <span class="tag-pill">Árabe / Hebraico</span>
-              </div>
-            </article>
-
-            <article class="corridor-card flash-card" data-corridor="gulf">
-              <div class="sweep"></div>
-              <div class="corridor-top">
-                <span class="corridor-code">SETOR 02 // GOLFO & PENÍNSULA</span>
-                <span class="corridor-arabic">الخليج</span>
-              </div>
-              <h3 data-i18n="c2_title">Península Arábica</h3>
-              <p data-i18n="c2_desc">Missão urbana e profissional (*Tentmaking*), redes discretas de comunhão, mentoria digital e apoio a comunidades expatriadas e locais.</p>
-              <div class="corridor-tags">
-                <span class="tag-pill">Missão Urbana</span>
-                <span class="tag-pill">Mídia Digital</span>
-                <span class="tag-pill">Comunidade</span>
+              <h3 data-i18n="c1_title">Nile & Giza Corridor</h3>
+              <p data-i18n="c1_desc">Education access, leadership mentoring, clinic logistics, and community resilience across Cairo and Upper Egypt.</p>
+              <div class="pill-list">
+                <span class="flat-pill">Education</span>
+                <span class="flat-pill">Leadership</span>
+                <span class="flat-pill">Arabic</span>
               </div>
             </article>
 
-            <article class="corridor-card flash-card" data-corridor="nile">
-              <div class="sweep"></div>
-              <div class="corridor-top">
-                <span class="corridor-code">SETOR 03 // VALE DO NILO</span>
-                <span class="corridor-arabic">وادي النيل</span>
+            <article class="corridor-box" data-node="1">
+              <div class="corridor-meta">
+                <span>SECTOR 02 // LEVANT</span>
+                <span>المشرق</span>
               </div>
-              <h3 data-i18n="c3_title">Norte da África & Nilo</h3>
-              <p data-i18n="c3_desc">Capacitação de jovens, alfabetização, logística de clínicas comunitárias e distribuição responsável de recursos essenciais.</p>
-              <div class="corridor-tags">
-                <span class="tag-pill">Saúde & Cuidado</span>
-                <span class="tag-pill">Liderança</span>
-                <span class="tag-pill">Logística</span>
+              <h3 data-i18n="c2_title">Levant & Jordan Valley</h3>
+              <p data-i18n="c2_desc">Shelter learning packs, refugee family relief, trauma-aware care, and cross-cultural mediation.</p>
+              <div class="pill-list">
+                <span class="flat-pill">Refugee Care</span>
+                <span class="flat-pill">Shelters</span>
+                <span class="flat-pill">Mediation</span>
               </div>
             </article>
 
-            <article class="corridor-card flash-card" data-corridor="persia">
-              <div class="sweep"></div>
-              <div class="corridor-top">
-                <span class="corridor-code">SETOR 04 // PLANALTO ORIENTAL</span>
-                <span class="corridor-arabic">المشرق الشرقي</span>
+            <article class="corridor-box" data-node="2">
+              <div class="corridor-meta">
+                <span>SECTOR 03 // PENINSULA</span>
+                <span>الخليج</span>
               </div>
-              <h3 data-i18n="c4_title">Crescente & Fronteiras</h3>
-              <p data-i18n="c4_desc">Tradução, discipulado por áudio e podcast, ensino resiliente de baixo consumo de banda e suporte a igrejas domésticas.</p>
-              <div class="corridor-tags">
-                <span class="tag-pill">Tradução</span>
-                <span class="tag-pill">Áudio & Rádio</span>
-                <span class="tag-pill">Safeguarding</span>
+              <h3 data-i18n="c3_title">Arabian Peninsula</h3>
+              <p data-i18n="c3_desc">Professional tentmaking, digital mentorship, audio discipleship, and quiet community fellowship.</p>
+              <div class="pill-list">
+                <span class="flat-pill">Urban Mission</span>
+                <span class="flat-pill">Digital Media</span>
+                <span class="flat-pill">Fellowship</span>
+              </div>
+            </article>
+
+            <article class="corridor-box" data-node="3">
+              <div class="corridor-meta">
+                <span>SECTOR 04 // EAST</span>
+                <span>المشرق الشرقي</span>
+              </div>
+              <h3 data-i18n="c4_title">Eastern Crescent</h3>
+              <p data-i18n="c4_desc">Translation, low-bandwidth teaching resources, safeguarding audits, and house-group support.</p>
+              <div class="pill-list">
+                <span class="flat-pill">Translation</span>
+                <span class="flat-pill">Low-Bandwidth</span>
+                <span class="flat-pill">Safeguarding</span>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- TELEMETRIA ESPIRITUAL & TERMINAL DE CAMPO -->
-      <section class="section-block" id="telemetry">
-        <div class="container telemetry-split">
-          <div class="cyber-panel flash-card">
-            <div class="sweep"></div>
-            <span class="section-kicker" data-i18n="diag_kicker">DIAGNÓSTICO & CHAMADO • TODAY'S CHURCH</span>
-            <h3 class="section-title" style="font-size:1.55rem; margin-bottom:14px" data-i18n="diag_title">
-              Termômetro Espiritual & Urgência da Missão
-            </h3>
-            <p style="color:var(--sand-muted); font-size:0.92rem; margin-bottom:22px" data-i18n="diag_desc">
-              A missão não ocorre apenas quando trabalhamos para uma instituição; ela acontece nas 167 horas restantes da semana. Veja o contraste que impulsiona nossa atuação no Oriente Médio:
+      <!-- SPIRITUAL TELEMETRY & FIELD CONSOLE -->
+      <section class="section" id="telemetry">
+        <div class="container two-col">
+          <div class="flat-panel">
+            <span class="kicker" data-i18n="sec2_kicker">TODAY'S CHURCH • MISSION READINESS</span>
+            <h2 class="section-title" style="font-size:1.4rem; margin-bottom:12px" data-i18n="sec2_title">
+              Spiritual Telemetry & Commitment
+            </h2>
+            <p style="color:var(--sand-secondary); font-size:0.88rem; margin-bottom:22px" data-i18n="sec2_desc">
+              Mission is not confined to institutional hours—it happens across all 167 hours of the week. There are countless things we can do actively for the Kingdom of God:
             </p>
 
-            <div class="progress-item">
-              <div class="progress-head">
-                <span data-i18n="bar_1_label">Os sinais da vinda de Cristo no mundo</span>
-                <span class="pct">97%</span>
+            <div class="bar-group">
+              <div class="bar-label">
+                <span data-i18n="b1_label">The signs of Christ's coming</span>
+                <span class="mono">97%</span>
               </div>
-              <div class="progress-track">
-                <div class="progress-fill" style="width: 97%"></div>
-              </div>
-            </div>
-
-            <div class="progress-item">
-              <div class="progress-head">
-                <span data-i18n="bar_2_label">O que podemos fazer ativamente pelo Reino de Deus</span>
-                <span class="pct">70%</span>
-              </div>
-              <div class="progress-track">
-                <div class="progress-fill turq" style="width: 70%"></div>
+              <div class="bar-outer">
+                <div class="bar-inner" style="width:97%"></div>
               </div>
             </div>
 
-            <div class="progress-item">
-              <div class="progress-head">
-                <span data-i18n="bar_3_label">O que hoje permitimos que o Espírito Santo faça através de nós</span>
-                <span class="pct" id="spiritPct">15%</span>
+            <div class="bar-group">
+              <div class="bar-label">
+                <span data-i18n="b2_label">What we do for the Kingdom of God</span>
+                <span class="mono">70%</span>
               </div>
-              <div class="progress-track">
-                <div class="progress-fill" id="spiritBar" style="width: 15%"></div>
+              <div class="bar-outer">
+                <div class="bar-inner terracotta" style="width:70%"></div>
               </div>
             </div>
 
-            <div style="margin-top:22px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
-              <button class="btn-flash secondary" id="igniteSpiritBtn">
-                <span>🔥</span> <span data-i18n="btn_ignite">Ativar Compromisso Total (100%)</span>
+            <div class="bar-group">
+              <div class="bar-label">
+                <span data-i18n="b3_label">What we allow the Holy Spirit to do through us</span>
+                <span class="mono" id="spiritVal">15%</span>
+              </div>
+              <div class="bar-outer">
+                <div class="bar-inner olive" id="spiritFill" style="width:15%"></div>
+              </div>
+            </div>
+
+            <div style="margin-top:22px; display:flex; gap:10px; flex-wrap:wrap">
+              <button class="btn-flat primary" id="commitSpiritBtn" data-i18n="btn_commit">
+                Activate Full Surrender (100%)
               </button>
-              <a href="https://www.adventistlocator.org/" target="_blank" rel="noopener" class="btn-flash ghost">
-                <span>🧭</span> <span>Find a Church Locator</span>
+              <a href="https://www.adventistlocator.org/" target="_blank" rel="noopener" class="btn-flat">
+                Find a Church Platform
               </a>
             </div>
           </div>
 
-          <div class="terminal-window">
-            <div class="terminal-bar">
-              <div class="term-dots">
-                <span style="background:#d96b38"></span>
-                <span style="background:#f5d77f"></span>
-                <span style="background:#00e5d1"></span>
-              </div>
-              <span>ADVIR_FIELD_CONSOLE // MENA_TELEMETRY_V4.2</span>
-              <span id="termClock">UTC 00:00:00</span>
+          <div class="console-box">
+            <div class="console-top">
+              <span>FIELD OPERATIONS LOG // MENA-DISPATCH</span>
+              <span>MINIMAL-DATA PROTOCOL</span>
             </div>
-
-            <div class="terminal-log" id="terminalLog"></div>
-
-            <div class="terminal-actions">
-              <button class="hud-chip" data-cmd="assess">▶ ASSESS NEEDS</button>
-              <button class="hud-chip" data-cmd="verify">▶ VERIFY PARTNER</button>
-              <button class="hud-chip" data-cmd="dispatch">▶ DISPATCH RELIEF</button>
-              <button class="hud-chip" data-cmd="prayer">▶ INTERCESSION PULSE</button>
+            <div class="console-feed" id="consoleFeed"></div>
+            <div class="console-foot">
+              <button class="mode-tab" data-log="assess">ASSESS NEEDS</button>
+              <button class="mode-tab" data-log="verify">VERIFY PARTNER</button>
+              <button class="mode-tab" data-log="logistics">ROUTE RELIEF</button>
+              <button class="mode-tab" data-log="safeguard">SAFEGUARDING CHECK</button>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- FRENTES DE MISSÃO -->
-      <section class="section-block" id="missions">
+      <!-- FIELD OPERATIONS PILLARS -->
+      <section class="section" id="operations">
         <div class="container">
-          <div class="section-header">
+          <div class="section-head">
             <div>
-              <span class="section-kicker" data-i18n="pillars_kicker">ARQUITETURA DE SERVIÇO</span>
-              <h2 class="section-title" data-i18n="pillars_title">Tecnologia, Compaixão e Método no Campo</h2>
+              <span class="kicker" data-i18n="sec3_kicker">OPERATIONAL DISCIPLINE</span>
+              <h2 class="section-title" data-i18n="sec3_title">Core Lines of Service</h2>
             </div>
           </div>
 
           <div class="pillars-grid">
-            <div class="pillar-card flash-card">
-              <div class="sweep"></div>
-              <div class="pillar-icon">📚</div>
-              <h3 data-i18n="p1_title">Educação & Abrigos</h3>
-              <p data-i18n="p1_desc">Pacotes educacionais multilíngues de baixa largura de banda, alfabetização e apoio psicossocial para crianças e famílias em áreas de refúgio.</p>
-              <div class="corridor-tags">
-                <span class="tag-pill">Low-Bandwidth</span>
-                <span class="tag-pill">Trauma-Aware</span>
-                <span class="tag-pill">Multilíngue</span>
+            <div class="pillar-box">
+              <span class="pillar-num">01 // EDUCATION & SHELTERS</span>
+              <h3 data-i18n="p1_title">Education Under Constraint</h3>
+              <p data-i18n="p1_desc">Low-bandwidth multilingual lesson packs, literacy scaffolding, and trauma-informed instruction for displaced families.</p>
+              <div class="pill-list">
+                <span class="flat-pill">Literacy</span>
+                <span class="flat-pill">Offline Packs</span>
+                <span class="flat-pill">Child Safety</span>
               </div>
             </div>
 
-            <div class="pillar-card flash-card">
-              <div class="sweep"></div>
-              <div class="pillar-icon">🎙️</div>
-              <h3 data-i18n="p2_title">Projeto 167 & Mobilização</h3>
-              <p data-i18n="p2_desc">Preparação espiritual, visão cosmológica e treinamento prático para que cada cristão viva a missão nas 167 horas da semana fora das quatro paredes.</p>
-              <div class="corridor-tags">
-                <span class="tag-pill">Spotify Podcast</span>
-                <span class="tag-pill">Mentoria</span>
-                <span class="tag-pill">Envio</span>
+            <div class="pillar-box">
+              <span class="pillar-num">02 // HUMANITARIAN CYCLE</span>
+              <h3 data-i18n="p2_title">Needs Verification & Relief</h3>
+              <p data-i18n="p2_desc">Assess, verify with local councils, coordinate distribution of winter kits and clinic supplies, and audit outcomes responsibly.</p>
+              <div class="pill-list">
+                <span class="flat-pill">Local Councils</span>
+                <span class="flat-pill">Clinic Routing</span>
+                <span class="flat-pill">Audit Trail</span>
               </div>
             </div>
 
-            <div class="pillar-card flash-card">
-              <div class="sweep"></div>
-              <div class="pillar-icon">🛡️</div>
-              <h3 data-i18n="p3_title">Safeguarding & Segurança Digital</h3>
-              <p data-i18n="p3_desc">Minimização de dados sensíveis, verificação responsável com conselhos locais e proteção rigorosa da identidade de voluntários e beneficiários.</p>
-              <div class="corridor-tags">
-                <span class="tag-pill">Zero-Surveillance</span>
-                <span class="tag-pill">Criptografia</span>
-                <span class="tag-pill">Ética</span>
+            <div class="pillar-box">
+              <span class="pillar-num">03 // PRIVACY & SAFEGUARDING</span>
+              <h3 data-i18n="p3_title">Dignity & Data Minimization</h3>
+              <p data-i18n="p3_desc">Strict need-to-know handling. We protect identities by default and prioritize beneficiary safety over publicity.</p>
+              <div class="pill-list">
+                <span class="flat-pill">Zero-Surveillance</span>
+                <span class="flat-pill">Accountability</span>
+                <span class="flat-pill">Ethics</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CONTATO & TRANSMISSÃO -->
-      <section class="section-block" id="contact">
-        <div class="container contact-grid">
-          <div class="cyber-panel flash-card">
-            <div class="sweep"></div>
-            <span class="section-kicker" data-i18n="contact_kicker">CANAL DIRETO • COMUNICAÇÃO</span>
-            <h2 class="section-title" style="font-size:1.7rem; margin-bottom:12px" data-i18n="contact_title">
-              Conecte-se com a Missão ADVIR
+      <!-- CONTACT SECTION -->
+      <section class="section" id="contact">
+        <div class="container two-col">
+          <div class="flat-panel">
+            <span class="kicker" data-i18n="sec4_kicker">SECURE COMMUNICATION</span>
+            <h2 class="section-title" style="font-size:1.45rem; margin-bottom:10px" data-i18n="sec4_title">
+              Connect With ADVIR
             </h2>
-            <p style="color:var(--sand-muted); font-size:0.92rem" data-i18n="contact_desc">
-              Para voluntariado transcultural, parcerias em projetos no Oriente Médio, treinamento ou informações sobre o Projeto 167, envie uma transmissão segura ao lado.
+            <p style="color:var(--sand-secondary); font-size:0.88rem" data-i18n="sec4_desc">
+              Use this channel for mission inquiries, regional partnerships, volunteer readiness, or Projeto 167 coordination. Share only necessary details.
             </p>
 
-            <div class="direct-channels">
-              <div class="channel-item">
-                <div class="channel-badge">✉</div>
-                <div>
-                  <div style="font-size:0.74rem; color:var(--sand-muted); font-family:var(--font-mono)">E-MAIL OFICIAL</div>
-                  <a href="mailto:bruno@advir.org" style="color:var(--gold-bright); text-decoration:none; font-weight:600">bruno@advir.org</a>
-                </div>
+            <div class="contact-list">
+              <div class="contact-row">
+                <span class="label">EMAIL</span>
+                <a href="mailto:bruno@advir.org" style="color:var(--ochre-matte); text-decoration:none">bruno@advir.org</a>
               </div>
-
-              <div class="channel-item">
-                <div class="channel-badge">☎</div>
-                <div>
-                  <div style="font-size:0.74rem; color:var(--sand-muted); font-family:var(--font-mono)">LINHA DE CONTATO / BASE</div>
-                  <div style="color:var(--sand-light); font-weight:600">+1 401 834-4957 • Seekonk, MA (US) / MENA Network</div>
-                </div>
+              <div class="contact-row">
+                <span class="label">BASE / PHONE</span>
+                <span>Seekonk, Massachusetts - US • +1 401 834-4957</span>
               </div>
-
-              <div class="channel-item">
-                <div class="channel-badge">🎧</div>
-                <div>
-                  <div style="font-size:0.74rem; color:var(--sand-muted); font-family:var(--font-mono)">PODCAST OFICIAL</div>
-                  <a href="https://open.spotify.com/show/4PDmWobMOAv2zbyaz81rOJ?si=urwtrAlwRIeiZY5MG-s3jg" target="_blank" rel="noopener" style="color:var(--turquoise-persian); text-decoration:none; font-weight:600">Ouça o Projeto 167 no Spotify →</a>
-                </div>
+              <div class="contact-row">
+                <span class="label">PODCAST</span>
+                <a href="https://open.spotify.com/show/4PDmWobMOAv2zbyaz81rOJ?si=urwtrAlwRIeiZY5MG-s3jg" target="_blank" rel="noopener" style="color:var(--sand-primary); text-decoration:none">Projeto 167 on Spotify →</a>
               </div>
             </div>
           </div>
 
-          <div class="cyber-panel">
+          <div class="flat-panel">
             <form id="contactForm">
-              <div class="form-row">
-                <div class="input-group">
-                  <label for="fName" data-i18n="form_name">Nome / Codinome</label>
-                  <input id="fName" name="name" type="text" class="cyber-input" placeholder="Seu nome" required />
+              <div class="form-grid">
+                <div class="field-block">
+                  <label for="fName">Name</label>
+                  <input id="fName" name="name" type="text" class="flat-input" placeholder="Your name" required />
                 </div>
-                <div class="input-group">
-                  <label for="fEmail" data-i18n="form_email">E-mail de Retorno</label>
-                  <input id="fEmail" name="email" type="email" class="cyber-input" placeholder="voce@dominio.com" required />
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="input-group">
-                  <label for="fPhone" data-i18n="form_phone">Telefone / WhatsApp (Opcional)</label>
-                  <input id="fPhone" name="phone" type="tel" class="cyber-input" placeholder="+55 / +1 ..." />
-                </div>
-                <div class="input-group">
-                  <label for="fSubject" data-i18n="form_subject">Frente de Interesse</label>
-                  <input id="fSubject" name="subject" type="text" class="cyber-input" placeholder="Missão Oriente Médio, Voluntariado, Parceria..." required />
+                <div class="field-block">
+                  <label for="fEmail">Email</label>
+                  <input id="fEmail" name="email" type="email" class="flat-input" placeholder="you@domain.com" required />
                 </div>
               </div>
 
-              <div class="input-group">
-                <label for="fMessage" data-i18n="form_message">Mensagem / Disponibilidade</label>
-                <textarea id="fMessage" name="message" class="cyber-input" placeholder="Escreva sua mensagem para a equipe ADVIR..." required></textarea>
+              <div class="form-grid">
+                <div class="field-block">
+                  <label for="fPhone">Phone (Optional)</label>
+                  <input id="fPhone" name="phone" type="tel" class="flat-input" placeholder="+1 ..." />
+                </div>
+                <div class="field-block">
+                  <label for="fSubject">Subject / Corridor</label>
+                  <input id="fSubject" name="subject" type="text" class="flat-input" placeholder="Middle East Mission, Partnership, Volunteering..." required />
+                </div>
               </div>
 
-              <div style="display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-top:16px">
-                <button type="submit" class="btn-flash primary">
-                  <span>🚀</span> <span data-i18n="form_submit">Transmitir Mensagem</span>
+              <div class="field-block">
+                <label for="fMessage">Message</label>
+                <textarea id="fMessage" name="message" class="flat-input" placeholder="Write your message..." required></textarea>
+              </div>
+
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:14px">
+                <button type="submit" class="btn-flat primary">
+                  Send Message
                 </button>
-                <span id="contactStatus" style="font-family:var(--font-mono); font-size:0.8rem; color:var(--turquoise-persian)"></span>
+                <span id="contactStatus" style="font-family:var(--font-mono); font-size:0.78rem; color:var(--ochre-matte)"></span>
               </div>
             </form>
           </div>
@@ -1632,15 +1283,14 @@
     </main>
 
     <footer>
-      <div class="container footer-flex">
+      <div class="container footer-inner">
         <div>
-          <strong style="color:var(--gold-bright); font-family:var(--font-display); letter-spacing:1.5px">© ADVIR — MIDDLE EAST MISSION & FIELD NETWORK</strong>
-          <p style="font-size:0.78rem; margin-top:4px">Presença discreta, tecnologia ética e serviço cristão na Janela 10/40.</p>
+          <strong style="font-family:var(--font-display); color:var(--sand-primary); letter-spacing:1.5px">© ADVIR — MIDDLE EAST MISSION & FIELD OPERATIONS</strong>
         </div>
-        <div style="display:flex; gap:14px; font-family:var(--font-mono); font-size:0.76rem">
-          <a href="#top" style="color:var(--gold-bright); text-decoration:none">▲ TOPO</a>
-          <a href="https://open.spotify.com/show/4PDmWobMOAv2zbyaz81rOJ" target="_blank" rel="noopener" style="color:var(--sand-muted); text-decoration:none">PROJETO 167</a>
-          <a href="mailto:bruno@advir.org" style="color:var(--sand-muted); text-decoration:none">BRUNO@ADVIR.ORG</a>
+        <div style="display:flex; gap:16px; font-family:var(--font-mono); font-size:0.74rem">
+          <a href="#top" style="color:var(--ochre-matte); text-decoration:none">TOP ↑</a>
+          <a href="https://open.spotify.com/show/4PDmWobMOAv2zbyaz81rOJ" target="_blank" rel="noopener" style="color:var(--sand-secondary); text-decoration:none">PROJETO 167</a>
+          <a href="https://www.adventistlocator.org/" target="_blank" rel="noopener" style="color:var(--sand-secondary); text-decoration:none">FIND A CHURCH</a>
         </div>
       </div>
     </footer>
@@ -1648,18 +1298,20 @@
 
   <script>
     /* =========================================================================
-       0. GATEWAY STEALTH: CUBO CHUMBO ESCURO 3D EM TELA TODA PRETA
-          (Só abre o portal tecnológico depois de clicar no cubo!)
+       1. STEALTH DARK LEAD 3D CUBE ON PURE BLACK SCREEN
+          (Unlocks the Middle East portal only when the cube is clicked)
        ========================================================================= */
     const gateEl = document.getElementById('stealthCubeGate');
     const gateCanvas = document.getElementById('gateCubeCanvas');
     const gCtx = gateCanvas.getContext('2d');
     const portalEl = document.getElementById('missionPortal');
+    const flatFlash = document.getElementById('flatFlash');
 
     let gw = 0, gh = 0, gdpr = 1;
     let portalUnlocked = false;
-    let unlockingSpinBoost = 0;
-    let isHoveringCube = false;
+    let spinBoost = 0;
+    let hoveringCube = false;
+    let cubeHitRadius = 120;
 
     function resizeGate() {
       gdpr = Math.min(window.devicePixelRatio || 1, 2.5);
@@ -1686,11 +1338,7 @@
 
     function vSub(a, b) { return [a[0]-b[0], a[1]-b[1], a[2]-b[2]]; }
     function vCross(a, b) {
-      return [
-        a[1]*b[2] - a[2]*b[1],
-        a[2]*b[0] - a[0]*b[2],
-        a[0]*b[1] - a[1]*b[0]
-      ];
+      return [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]];
     }
     function vDot(a, b) { return a[0]*b[0] + a[1]*b[1] + a[2]*b[2]; }
     function vNorm(v) {
@@ -1712,40 +1360,34 @@
 
     const gKeyLight  = vNorm([-0.42, -0.68, -0.78]);
     const gFillLight = vNorm([ 0.65,  0.35, -0.55]);
-    const gBackLight = vNorm([ 0.00,  0.20,  0.95]);
 
     let gAx = 0.52, gAy = 0.78, gAz = 0.24;
     let gLast = performance.now();
-    let currentCubeHitRadius = 120;
 
     function drawGateCube(now) {
       const dt = Math.min((now - gLast) / 1000, 0.05);
       gLast = now;
 
-      if (!portalUnlocked || unlockingSpinBoost > 0) {
+      if (!portalUnlocked || spinBoost > 0) {
         const t = now * 0.001;
-        const speedMult = 1 + unlockingSpinBoost * 14;
-        const wx = (0.48 * Math.sin(t * 0.31) + 0.32 * Math.cos(t * 0.17)) * speedMult;
-        const wy = (0.56 * Math.cos(t * 0.23) + 0.28 * Math.sin(t * 0.41)) * speedMult;
-        const wz = (0.44 * Math.sin(t * 0.29 + 1.4) - 0.22 * Math.cos(t * 0.19)) * speedMult;
-
-        gAx += wx * dt;
-        gAy += wy * dt;
-        gAz += wz * dt;
+        const mult = 1 + spinBoost * 12;
+        gAx += (0.48 * Math.sin(t * 0.31) + 0.32 * Math.cos(t * 0.17)) * mult * dt;
+        gAy += (0.56 * Math.cos(t * 0.23) + 0.28 * Math.sin(t * 0.41)) * mult * dt;
+        gAz += (0.44 * Math.sin(t * 0.29 + 1.4) - 0.22 * Math.cos(t * 0.19)) * mult * dt;
 
         gCtx.clearRect(0, 0, gw, gh);
 
         const cx = gw * 0.5;
         const cy = gh * 0.5;
         const cubeScale = Math.min(gw, gh) * 0.135;
-        currentCubeHitRadius = cubeScale * 1.45;
+        cubeHitRadius = cubeScale * 1.45;
         const camDist = 4.8;
 
-        // Halo bem suave de luz ao fundo
-        const glowRadius = cubeScale * 2.55;
+        // Soft background light halo
+        const glowRadius = cubeScale * 2.4;
         const bgGlow = gCtx.createRadialGradient(cx, cy, cubeScale * 0.15, cx, cy, glowRadius);
-        bgGlow.addColorStop(0, isHoveringCube ? 'rgba(185, 198, 220, 0.095)' : 'rgba(155, 170, 190, 0.065)');
-        bgGlow.addColorStop(0.45, 'rgba(95, 108, 125, 0.024)');
+        bgGlow.addColorStop(0, 'rgba(145, 158, 175, 0.055)');
+        bgGlow.addColorStop(0.5, 'rgba(85, 95, 108, 0.02)');
         bgGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
         gCtx.fillStyle = bgGlow;
         gCtx.beginPath();
@@ -1780,29 +1422,17 @@
 
         visibleFaces.sort((a, b) => b.depth - a.depth);
 
+        // Matte dark lead faces
         for (const item of visibleFaces) {
           const { f, n } = item;
           const pts = f.map(idx => screenVerts[idx]);
-
           const dKey  = Math.max(0, -vDot(n, gKeyLight));
-          const dFill = Math.max(0, -vDot(n, gFillLight)) * 0.32;
-          const dBack = Math.max(0, -vDot(n, gBackLight)) * 0.22;
-          const spec = Math.pow(dKey, 11) * 0.24;
-          const fresnel = Math.pow(1 - Math.min(1, Math.abs(n[2])), 2.2) * 0.14;
-          const lightSum = dKey * 0.75 + dFill + dBack + fresnel;
+          const dFill = Math.max(0, -vDot(n, gFillLight)) * 0.28;
+          const shade = dKey * 0.72 + dFill;
 
-          // Tonalidade chumbo escuro (#16181d -> #393f49)
-          const rTop = Math.round(20 + lightSum * 26 + spec * 52);
-          const gTop = Math.round(22 + lightSum * 28 + spec * 56);
-          const bTop = Math.round(26 + lightSum * 33 + spec * 64);
-
-          const rBot = Math.max(11, Math.round(rTop * 0.72));
-          const gBot = Math.max(12, Math.round(gTop * 0.72));
-          const bBot = Math.max(15, Math.round(bTop * 0.74));
-
-          const grad = gCtx.createLinearGradient(pts[0][0], pts[0][1], pts[2][0], pts[2][1]);
-          grad.addColorStop(0, `rgb(${rTop}, ${gTop}, ${bTop})`);
-          grad.addColorStop(1, `rgb(${rBot}, ${gBot}, ${bBot})`);
+          const r = Math.round(21 + shade * 24);
+          const g = Math.round(23 + shade * 26);
+          const b = Math.round(27 + shade * 30);
 
           gCtx.beginPath();
           gCtx.moveTo(pts[0][0], pts[0][1]);
@@ -1811,67 +1441,60 @@
           gCtx.lineTo(pts[3][0], pts[3][1]);
           gCtx.closePath();
 
-          gCtx.fillStyle = grad;
+          gCtx.fillStyle = `rgb(${r}, ${g}, ${b})`;
           gCtx.fill();
 
-          const edgeHighlight = 0.20 + dKey * 0.30 + fresnel * 0.35 + (isHoveringCube ? 0.12 : 0);
-          gCtx.strokeStyle = unlockingSpinBoost > 0
-            ? `rgba(245, 215, 127, ${Math.min(1, edgeHighlight + 0.4).toFixed(3)})`
-            : `rgba(128, 138, 154, ${edgeHighlight.toFixed(3)})`;
-          gCtx.lineWidth = 1.25;
+          const edgeAlpha = 0.22 + dKey * 0.24 + (hoveringCube ? 0.1 : 0);
+          gCtx.strokeStyle = `rgba(115, 124, 138, ${edgeAlpha.toFixed(3)})`;
+          gCtx.lineWidth = 1.15;
           gCtx.lineJoin = 'round';
           gCtx.stroke();
         }
       }
-
       requestAnimationFrame(drawGateCube);
     }
     requestAnimationFrame(drawGateCube);
 
-    // Detectar hover e clique especificamente no Cubo no centro da tela
     gateCanvas.addEventListener('pointermove', e => {
       const dx = e.clientX - gw * 0.5;
       const dy = e.clientY - gh * 0.5;
-      isHoveringCube = Math.hypot(dx, dy) <= currentCubeHitRadius;
-      gateCanvas.style.cursor = isHoveringCube ? 'pointer' : 'default';
+      hoveringCube = Math.hypot(dx, dy) <= cubeHitRadius;
+      gateCanvas.style.cursor = hoveringCube ? 'pointer' : 'default';
     });
 
     gateCanvas.addEventListener('pointerdown', e => {
       const dx = e.clientX - gw * 0.5;
       const dy = e.clientY - gh * 0.5;
-      if (Math.hypot(dx, dy) <= currentCubeHitRadius * 1.15) {
-        unlockMissionPortal();
+      if (Math.hypot(dx, dy) <= cubeHitRadius * 1.15) {
+        unlockPortal();
       }
     });
 
-    function unlockMissionPortal() {
-      if (portalUnlocked) return;
-      audioEnabled = true;
-      unlockingSpinBoost = 1;
-      playTone(340, 'sine', 0.18, 0.07);
-      setTimeout(() => playTone(680, 'triangle', 0.25, 0.08), 160);
+    function triggerFlatFlash() {
+      flatFlash.classList.add('active');
+      setTimeout(() => flatFlash.classList.remove('active'), 260);
+    }
 
+    function unlockPortal() {
+      if (portalUnlocked) return;
+      spinBoost = 1;
       setTimeout(() => {
         portalUnlocked = true;
-        unlockingSpinBoost = 0;
-        triggerFlashBurst();
+        spinBoost = 0;
+        triggerFlatFlash();
         gateEl.classList.add('unlocked');
         portalEl.classList.add('revealed');
         portalEl.setAttribute('aria-hidden', 'false');
         document.body.classList.remove('cube-locked');
-        document.title = 'ADVIR — Missão & Operações no Oriente Médio | Field Network';
-        resizeHolo();
-        resizeBg();
-        scrambleText(
-          document.getElementById('scrambleTitle'),
-          document.getElementById('scrambleTitle').textContent,
-          750
-        );
-      }, 360);
+        document.title = 'ADVIR — Middle East Mission & Field Operations';
+        resizeVectorStage();
+        resizeDust();
+        runCipher(document.getElementById('cipherHeadline'), document.getElementById('cipherHeadline').textContent);
+      }, 280);
     }
 
-    document.getElementById('returnToCubeBtn').addEventListener('click', () => {
-      triggerFlashBurst();
+    document.getElementById('lockCubeBtn').addEventListener('click', () => {
+      triggerFlatFlash();
       portalUnlocked = false;
       portalEl.classList.remove('revealed');
       portalEl.setAttribute('aria-hidden', 'true');
@@ -1882,142 +1505,81 @@
     });
 
     /* =========================================================================
-       1. SINTETIZADOR DE ÁUDIO TÁTICO (Web Audio API — Efeitos estilo Flash)
+       2. CIPHER TEXT DECODER EFFECT (English / Arabic / Hebrew glyphs)
        ========================================================================= */
-    let audioEnabled = true;
-    let audioCtx = null;
-
-    function playTone(freq = 640, type = 'sine', duration = 0.08, vol = 0.05) {
-      if (!audioEnabled) return;
-      try {
-        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = type;
-        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(freq * 1.35, audioCtx.currentTime + duration);
-        gain.gain.setValueAtTime(vol, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + duration);
-      } catch (_) {}
-    }
-
-    function triggerFlashBurst() {
-      const burst = document.getElementById('flashBurst');
-      burst.classList.add('active');
-      playTone(520, 'triangle', 0.16, 0.07);
-      setTimeout(() => burst.classList.remove('active'), 360);
-    }
-
-    document.getElementById('toggleAudio').addEventListener('click', () => {
-      audioEnabled = !audioEnabled;
-      document.getElementById('audioIcon').textContent = audioEnabled ? '🔊' : '🔇';
-      document.getElementById('audioLabel').textContent = audioEnabled ? 'SFX ON' : 'SFX OFF';
-      if (audioEnabled) playTone(880, 'sine', 0.12, 0.06);
-    });
-
-    /* =========================================================================
-       2. EFEITO DECODIFICADOR DE TEXTO MULTILÍNGUE (Árabe / Hebraico / Latino)
-       ========================================================================= */
-    const cipherChars = 'أبتثجحخدذرزسشصضطظعغفقكلمنهويאבגדהוזחטיכלמנסעפצקרשת0123456789◈◇◆';
-    function scrambleText(element, finalString, duration = 700) {
-      const steps = 18;
-      let frame = 0;
-      const interval = setInterval(() => {
-        frame++;
-        const progress = frame / steps;
-        const keepLen = Math.floor(finalString.length * progress);
-        let out = finalString.slice(0, keepLen);
-        for (let i = keepLen; i < finalString.length; i++) {
-          if (finalString[i] === ' ') out += ' ';
-          else out += cipherChars[Math.floor(Math.random() * cipherChars.length)];
+    const glyphs = 'أبتثجحخدذرزسشصضطظعغفقكلمنهويאבגדהוזחטיכלמנסעפצקרשתABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    function runCipher(el, targetText, duration = 550) {
+      const totalSteps = 15;
+      let step = 0;
+      const timer = setInterval(() => {
+        step++;
+        const resolved = Math.floor((step / totalSteps) * targetText.length);
+        let str = targetText.slice(0, resolved);
+        for (let i = resolved; i < targetText.length; i++) {
+          str += targetText[i] === ' ' ? ' ' : glyphs[Math.floor(Math.random() * glyphs.length)];
         }
-        element.textContent = out;
-        if (frame >= steps) {
-          element.textContent = finalString;
-          clearInterval(interval);
+        el.textContent = str;
+        if (step >= totalSteps) {
+          el.textContent = targetText;
+          clearInterval(timer);
         }
-      }, duration / steps);
+      }, duration / totalSteps);
     }
 
     /* =========================================================================
-       3. TRADUÇÃO INSTANTÂNEA (PT / EN / AR / HE)
+       3. LANGUAGE SWITCHER (ENGLISH BY DEFAULT — EN / AR / HE, NO PORTUGUESE)
        ========================================================================= */
-    const i18n = {
-      pt: {
-        nav_sub: 'Missão & Operações no Oriente Médio',
-        nav_corridors: 'Corredores 10/40',
-        nav_telemetry: 'Telemetria & Reino',
-        nav_missions: 'Frentes de Missão',
-        nav_contact: 'Transmissão',
-        hero_badge: 'REDE MISSIONÁRIA & HUMANITÁRIA • ORIENTE MÉDIO',
-        hero_title_1: 'Presença viva onde a',
-        hero_title_2: ' Luz encontra o Deserto.',
-        hero_desc: 'Somos uma rede especializada em frentes de missão, educação, apoio comunitário e resposta humanitária no Oriente Médio e na Janela 10/40. A missão não acontece apenas dentro de instituições — ela é diária, estratégica, movida pelo Espírito e presente em cada fronteira.',
-        cta_explore: 'Explorar Mapa Tático',
-        cta_contact: 'Conectar à Rede',
-        corridors_kicker: 'GEOGRAFIA DE ATUAÇÃO • MENA & 10/40',
-        corridors_title: 'Corredores Estratégicos no Oriente Médio',
-        diag_title: 'Termômetro Espiritual & Urgência da Missão',
-        pillars_title: 'Tecnologia, Compaixão e Método no Campo',
-        contact_title: 'Conecte-se com a Missão ADVIR'
-      },
+    const translations = {
       en: {
-        nav_sub: 'MENA Mission & Field Operations',
+        nav_sub: 'Middle East Mission & Field Network',
         nav_corridors: '10/40 Corridors',
-        nav_telemetry: 'Kingdom Telemetry',
-        nav_missions: 'Mission Fronts',
-        nav_contact: 'Transmission',
-        hero_badge: 'MISSION & HUMANITARIAN NETWORK • MIDDLE EAST',
-        hero_title_1: 'Living presence where',
-        hero_title_2: ' Light meets the Desert.',
-        hero_desc: 'We are a network specialized in mission work, shelter education, community care, and humanitarian response across the Middle East and the 10/40 Window. Mission is daily, strategic, Spirit-led, and active across every border.',
-        cta_explore: 'Explore Tactical Map',
-        cta_contact: 'Connect to Network',
-        corridors_kicker: 'FIELD GEOGRAPHY • MENA & 10/40',
-        corridors_title: 'Strategic Corridors in the Middle East',
-        diag_title: "Today's Church & Mission Urgency",
-        pillars_title: 'Technology, Compassion & Field Method',
-        contact_title: 'Connect with ADVIR Mission'
+        nav_telemetry: 'Mission Telemetry',
+        nav_operations: 'Field Operations',
+        nav_contact: 'Contact',
+        hero_kicker: 'FIELD OPERATIONS & SERVICE NETWORK • MENA',
+        hero_title_1: 'Quiet presence and active mission',
+        hero_title_2: ' across the Middle East.',
+        hero_desc: 'We are a network specialized in front-line mission work, shelter education, humanitarian logistics, and cultural mediation across the Middle East. Mission does not only happen inside institutions—it is daily, accountable, and lived across every border.',
+        cta_corridors: 'Explore Regional Corridors',
+        cta_contact: 'Direct Transmission',
+        sec1_title: 'Middle East Field Corridors',
+        sec2_title: 'Spiritual Telemetry & Commitment',
+        sec3_title: 'Core Lines of Service',
+        sec4_title: 'Connect With ADVIR'
       },
       ar: {
         nav_sub: 'شبكة الخدمة والعمليات في الشرق الأوسط',
         nav_corridors: 'مناطق الخدمة',
         nav_telemetry: 'مؤشرات الرسالة',
-        nav_missions: 'مبادرات الميدان',
+        nav_operations: 'العمليات الميدانية',
         nav_contact: 'تواصل معنا',
-        hero_badge: 'شبكة الخدمة الإنسانية والتعليمية • الشرق الأوسط',
-        hero_title_1: 'حضور حي حيث يلتقي',
-        hero_title_2: ' النور بالصحراء.',
-        hero_desc: 'شبكة متخصصة في العمل الإرسالي والتعليم والدعم المجتمعي والاستجابة الإنسانية في الشرق الأوسط ونافذة 10/40، بأسلوب يحترم الكرامة الإنسانية ويبني جسور الرجاء.',
-        cta_explore: 'استكشاف الخريطة التفاعلية',
-        cta_contact: 'اتصل بالشبكة',
-        corridors_kicker: 'جغرافيا الخدمة • الشرق الأوسط',
-        corridors_title: 'الممرات الاستراتيجية في الشرق الأوسط',
-        diag_title: 'مؤشرات الخدمة والاحتياج الروحي',
-        pillars_title: 'التكنولوجيا والرحمة والعمل الميداني',
-        contact_title: 'تواصل مع شبكة ADVIR'
+        hero_kicker: 'شبكة الخدمة الإنسانية والتعليمية • الشرق الأوسط',
+        hero_title_1: 'حضور هادئ ورسالة فاعلة',
+        hero_title_2: ' في قلب الشرق الأوسط.',
+        hero_desc: 'شبكة متخصصة في العمل الإرسالي والتعليم في الملاجئ والدعم الإنساني والوساطة الثقافية في الشرق الأوسط ونافذة 10/40، بأسلوب يحترم الكرامة الإنسانية.',
+        cta_corridors: 'استكشاف الممرات الإقليمية',
+        cta_contact: 'تواصل مباشر',
+        sec1_title: 'الممرات الميدانية في الشرق الأوسط',
+        sec2_title: 'مؤشرات الخدمة والالتزام الروحي',
+        sec3_title: 'مسارات الخدمة الأساسية',
+        sec4_title: 'تواصل مع شبكة ADVIR'
       },
       he: {
         nav_sub: 'רשת שליחות ופעילות במזרח התיכון',
         nav_corridors: 'מרחבי פעולה',
         nav_telemetry: 'מדדי שליחות',
-        nav_missions: 'חזיתות שירות',
+        nav_operations: 'פעילות שטח',
         nav_contact: 'יצירת קשר',
-        hero_badge: 'רשת שליחות וסיוע הומניטרי • המזרח התיכון',
-        hero_title_1: 'נוכחות חיה במקום שבו',
-        hero_title_2: ' האור פוגש את המדבר.',
-        hero_desc: 'רשת המתמחה בשליחות, חינוך, סיוע קהילתי ומענה הומניטרי במזרח התיכון ובחלון 10/40 — מתוך מחויבות יומיומית, טכנולוגיה אחראית וכבוד האדם.',
-        cta_explore: 'מפה טקטית אינטראקטיבית',
-        cta_contact: 'התחברות לרשת',
-        corridors_kicker: 'גיאוגרפיה תפעולית • המזרח התיכון',
-        corridors_title: 'מסדרונות אסטרטגיים במזרח התיכון',
-        diag_title: 'מדד רוחני ודחיפות השליחות',
-        pillars_title: 'טכנולוגיה, חמלה ושיטה בשטח',
-        contact_title: 'צור קשר עם ADVIR'
+        hero_kicker: 'רשת שליחות וסיוע הומניטרי • המזרח התיכון',
+        hero_title_1: 'נוכחות שקטה ושליחות פעילה',
+        hero_title_2: ' ברחבי המזרח התיכון.',
+        hero_desc: 'רשת המתמחה בשליחות, חינוך במקלטים, לוגיסטיקה הומניטרית וגישור תרבותי במזרח התיכון ובחלון 10/40 — מתוך מחויבות יומיומית וכבוד האדם.',
+        cta_corridors: 'סיור במסדרונות האזוריים',
+        cta_contact: 'תקשורת ישירה',
+        sec1_title: 'מסדרונות שטח במזרח התיכון',
+        sec2_title: 'מדד רוחני ומחויבות לשליחות',
+        sec3_title: 'צירי שירות מרכזיים',
+        sec4_title: 'צור קשר עם ADVIR'
       }
     };
 
@@ -2025,414 +1587,327 @@
       btn.addEventListener('click', () => {
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const lang = btn.getAttribute('data-lang');
-        const dict = i18n[lang];
+        const dict = translations[btn.getAttribute('data-lang')];
         if (!dict) return;
-        triggerFlashBurst();
-        Object.keys(dict).forEach(key => {
-          const el = document.querySelector(`[data-i18n="${key}"]`);
+        triggerFlatFlash();
+        Object.keys(dict).forEach(k => {
+          const el = document.querySelector(`[data-i18n="${k}"]`);
           if (el) {
-            if (key === 'hero_title_1') scrambleText(el, dict[key], 550);
-            else el.textContent = dict[key];
+            if (k === 'hero_title_1') runCipher(el, dict[k], 480);
+            else el.textContent = dict[k];
           }
         });
       });
     });
 
     /* =========================================================================
-       4. BARRA DE COMPROMISSO ESPIRITUAL
+       4. SUBTLE DESERT DUST CANVAS (Matte particles, no glossy lines)
        ========================================================================= */
-    let spiritIgnited = false;
-    document.getElementById('igniteSpiritBtn').addEventListener('click', () => {
-      spiritIgnited = !spiritIgnited;
-      const bar = document.getElementById('spiritBar');
-      const pct = document.getElementById('spiritPct');
-      triggerFlashBurst();
-      if (spiritIgnited) {
-        bar.style.width = '100%';
-        pct.textContent = '100% (ATIVADO)';
-        addTerminalLog('SPIRIT_CORE', 'Compromisso integral ativado: 100% de disponibilidade para ação do Espírito no campo.');
-      } else {
-        bar.style.width = '15%';
-        pct.textContent = '15%';
-      }
-    });
+    const dustCanvas = document.getElementById('dustCanvas');
+    const dCtx = dustCanvas.getContext('2d');
+    let dw = 0, dh = 0;
 
-    /* =========================================================================
-       5. BACKGROUND CANVAS: PARTÍCULAS DE AREIA DOURADA & FEIXES DE LUZ
-       ========================================================================= */
-    const bgCanvas = document.getElementById('bgCanvas');
-    const bgCtx = bgCanvas.getContext('2d');
-    let bw = 0, bh = 0;
-    const mouse = { x: -9999, y: -9999 };
-
-    function resizeBg() {
-      bw = window.innerWidth;
-      bh = window.innerHeight;
-      bgCanvas.width = bw;
-      bgCanvas.height = bh;
+    function resizeDust() {
+      dw = window.innerWidth;
+      dh = window.innerHeight;
+      dustCanvas.width = dw;
+      dustCanvas.height = dh;
     }
-    window.addEventListener('resize', resizeBg);
-    resizeBg();
+    window.addEventListener('resize', resizeDust);
+    resizeDust();
 
-    window.addEventListener('mousemove', e => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    });
-
-    const sandParticles = Array.from({ length: 75 }, () => ({
+    const dustMotes = Array.from({ length: 45 }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
-      vx: (Math.random() - 0.35) * 0.45,
-      vy: (Math.random() - 0.5) * 0.35,
-      r: Math.random() * 2.1 + 0.6,
-      gold: Math.random() > 0.28
+      vx: (Math.random() - 0.3) * 0.3,
+      vy: (Math.random() - 0.5) * 0.2,
+      s: Math.random() * 1.6 + 0.6
     }));
 
-    function renderBg() {
+    function drawDust() {
       if (portalUnlocked) {
-        bgCtx.clearRect(0, 0, bw, bh);
-        for (let i = 0; i < sandParticles.length; i++) {
-          const p = sandParticles[i];
-          p.x += p.vx;
-          p.y += p.vy;
-
-          if (p.x < 0) p.x = bw;
-          if (p.x > bw) p.x = 0;
-          if (p.y < 0) p.y = bh;
-          if (p.y > bh) p.y = 0;
-
-          const dx = p.x - mouse.x;
-          const dy = p.y - mouse.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist < 150) {
-            bgCtx.strokeStyle = p.gold
-              ? `rgba(245, 215, 127, ${(1 - dist / 150) * 0.35})`
-              : `rgba(0, 229, 209, ${(1 - dist / 150) * 0.35})`;
-            bgCtx.lineWidth = 0.8;
-            bgCtx.beginPath();
-            bgCtx.moveTo(p.x, p.y);
-            bgCtx.lineTo(mouse.x, mouse.y);
-            bgCtx.stroke();
-          }
-
-          bgCtx.fillStyle = p.gold ? 'rgba(245, 215, 127, 0.55)' : 'rgba(0, 229, 209, 0.5)';
-          bgCtx.beginPath();
-          bgCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          bgCtx.fill();
+        dCtx.clearRect(0, 0, dw, dh);
+        dCtx.fillStyle = 'rgba(196, 154, 82, 0.24)';
+        for (const m of dustMotes) {
+          m.x += m.vx;
+          m.y += m.vy;
+          if (m.x < 0) m.x = dw;
+          if (m.x > dw) m.x = 0;
+          if (m.y < 0) m.y = dh;
+          if (m.y > dh) m.y = 0;
+          dCtx.fillRect(m.x, m.y, m.s, m.s);
         }
       }
-      requestAnimationFrame(renderBg);
+      requestAnimationFrame(drawDust);
     }
-    requestAnimationFrame(renderBg);
+    requestAnimationFrame(drawDust);
 
     /* =========================================================================
-       6. HOLOGRAMA 3D ORIENTE MÉDIO (Cubo Chumbo/Ouro + Nós Geográficos MENA)
+       5. TACTICAL VECTOR CANVAS: GIZA PYRAMID WIREFRAME & MENA CORRIDORS
        ========================================================================= */
-    const holoCanvas = document.getElementById('menaHoloCanvas');
-    const hCtx = holoCanvas.getContext('2d');
-    let hw = 0, hh = 0, hdpr = 1;
-    let holoMode = 'hybrid';
-    let pulseWave = 0;
+    const vecCanvas = document.getElementById('menaVectorCanvas');
+    const vCtx = vecCanvas.getContext('2d');
+    let vw = 480, vh = 330, vdpr = 1;
+    let vectorMode = 'pyramid'; // 'pyramid' | 'network'
+    let scanRing = 0;
 
-    function resizeHolo() {
-      const rect = holoCanvas.parentElement.getBoundingClientRect();
-      hdpr = Math.min(window.devicePixelRatio || 1, 2);
-      hw = rect.width || 480;
-      hh = rect.height || 360;
-      holoCanvas.width = hw * hdpr;
-      holoCanvas.height = hh * hdpr;
-      hCtx.setTransform(hdpr, 0, 0, hdpr, 0, 0);
+    function resizeVectorStage() {
+      const rect = vecCanvas.parentElement.getBoundingClientRect();
+      vdpr = Math.min(window.devicePixelRatio || 1, 2);
+      vw = rect.width || 480;
+      vh = rect.height || 330;
+      vecCanvas.width = vw * vdpr;
+      vecCanvas.height = vh * vdpr;
+      vCtx.setTransform(vdpr, 0, 0, vdpr, 0, 0);
     }
-    window.addEventListener('resize', resizeHolo);
-    resizeHolo();
+    window.addEventListener('resize', resizeVectorStage);
+    resizeVectorStage();
 
-    const menaNodes = [
-      { id: 'levant', label: 'JERUSALÉM / AMÃ', ar: 'القدس • عمّان', coords: '31.76°N 35.21°E', pos: [-0.25, -0.18, 0.85], desc: 'Corredor do Levante: Educação em abrigos, mediação cultural árabe/hebraico e apoio comunitário direto.' },
-      { id: 'beirut', label: 'BEIRUTE / DAMASCO', ar: 'بيروت • دمشق', coords: '33.89°N 35.50°E', pos: [-0.22, -0.42, 0.78], desc: 'Apoio emergencial a famílias deslocadas, kits de inverno, clínicas móveis e acolhimento.' },
-      { id: 'cairo',  label: 'CAIRO / NILO', ar: 'القاهرة', coords: '30.04°N 31.23°E', pos: [-0.62, 0.05, 0.68], desc: 'Vale do Nilo & Norte da África: Formação de jovens, alfabetização e logística humanitária.' },
-      { id: 'gulf',   label: 'RIADE / DUBAI', ar: 'الرياض • دبي', coords: '24.71°N 46.67°E', pos: [0.35, 0.32, 0.72], desc: 'Península Arábica: Missão urbana, mentoria profissional, podcasts e comunidades discretas.' },
-      { id: 'baghdad',label: 'BAGDÁ / TIGRE', ar: 'بغداد', coords: '33.31°N 44.36°E', pos: [0.22, -0.22, 0.82], desc: 'Mesopotâmia: Reconstrução comunitária, apoio educacional e preservação da dignidade humana.' },
-      { id: 'persia', label: 'FRONTEIRA ORIENTAL', ar: 'المشرق', coords: '35.68°N 51.38°E', pos: [0.68, -0.30, 0.55], desc: 'Planalto Oriental: Discipulado por áudio, tradução e suporte resiliente a grupos locais.' }
+    const sectors = [
+      { name: 'CAIRO & GIZA CORRIDOR (القاهرة)', coords: '29.9792° N, 31.1342° E', pos: [-0.55, 0.18, 0.4], summary: 'Youth leadership training, literacy programs, community health coordination, and local partner support along the Nile corridor.' },
+      { name: 'LEVANT & JORDAN VALLEY (المشرق)', coords: '31.9539° N, 35.9106° E', pos: [-0.15, -0.22, 0.55], summary: 'Shelter learning packs, refugee family relief, trauma-aware care, and cross-cultural mediation across Jerusalem, Amman, and Beirut.' },
+      { name: 'ARABIAN PENINSULA (الخليج)', coords: '24.7136° N, 46.6753° E', pos: [0.32, 0.28, 0.45], summary: 'Professional tentmaking, digital mentorship, audio discipleship, and quiet community fellowship.' },
+      { name: 'EASTERN CRESCENT (المشرق الشرقي)', coords: '33.3152° N, 44.3661° E', pos: [0.58, -0.25, 0.35], summary: 'Translation, low-bandwidth teaching resources, safeguarding audits, and house-group support.' }
     ];
 
-    const cubeEdges = [
-      [0,1],[1,2],[2,3],[3,0],
-      [4,5],[5,6],[6,7],[7,4],
-      [0,4],[1,5],[2,6],[3,7]
+    // 3D Pyramid geometry (Apex + 4 base corners + inner chamber lines)
+    const pyrVerts = [
+      [ 0.0, -0.95,  0.0], // 0: Apex
+      [-1.0,  0.65, -1.0], // 1: Base NW
+      [ 1.0,  0.65, -1.0], // 2: Base NE
+      [ 1.0,  0.65,  1.0], // 3: Base SE
+      [-1.0,  0.65,  1.0], // 4: Base SW
+      [ 0.0,  0.15,  0.0]  // 5: Inner King's Chamber node
+    ];
+    const pyrEdges = [
+      [0,1],[0,2],[0,3],[0,4],
+      [1,2],[2,3],[3,4],[4,1],
+      [0,5],[1,3],[2,4]
     ];
 
-    let rotXAngle = 0.35, rotYAngle = -0.45, rotZAngle = 0.12;
-    let isDragging = false, prevX = 0, prevY = 0;
-    let projectedNodeHits = [];
-    let selectedNodeIndex = 0;
+    let pYaw = 0.55, pPitch = 0.22;
+    let draggingVec = false, lastVX = 0, lastVY = 0;
+    let activeSectorIdx = 0;
+    let screenSectorNodes = [];
 
-    const stageEl = document.getElementById('holoStage');
-    stageEl.addEventListener('pointerdown', e => {
+    const vectorStage = document.getElementById('vectorStage');
+    vectorStage.addEventListener('pointerdown', e => {
       if (e.target.tagName === 'BUTTON') return;
-      isDragging = true;
-      prevX = e.clientX;
-      prevY = e.clientY;
+      draggingVec = true;
+      lastVX = e.clientX;
+      lastVY = e.clientY;
 
-      const rect = holoCanvas.getBoundingClientRect();
+      const rect = vecCanvas.getBoundingClientRect();
       const mx = e.clientX - rect.left;
       const my = e.clientY - rect.top;
-      for (let i = 0; i < projectedNodeHits.length; i++) {
-        const nh = projectedNodeHits[i];
-        if (Math.hypot(mx - nh.x, my - nh.y) < 22) {
-          selectMenaNode(i);
+      for (const sn of screenSectorNodes) {
+        if (Math.hypot(mx - sn.x, my - sn.y) < 24) {
+          selectSector(sn.idx);
           break;
         }
       }
     });
 
     window.addEventListener('pointermove', e => {
-      if (!isDragging) return;
-      const dx = e.clientX - prevX;
-      const dy = e.clientY - prevY;
-      prevX = e.clientX;
-      prevY = e.clientY;
-      rotYAngle += dx * 0.008;
-      rotXAngle += dy * 0.008;
+      if (!draggingVec) return;
+      pYaw += (e.clientX - lastVX) * 0.007;
+      pPitch = Math.max(-0.6, Math.min(0.8, pPitch + (e.clientY - lastVY) * 0.006));
+      lastVX = e.clientX;
+      lastVY = e.clientY;
     });
+    window.addEventListener('pointerup', () => { draggingVec = false; });
 
-    window.addEventListener('pointerup', () => { isDragging = false; });
-
-    function selectMenaNode(idx) {
-      selectedNodeIndex = idx;
-      const n = menaNodes[idx];
-      document.getElementById('nodeName').textContent = `NÓ ATIVO: ${n.label} (${n.ar})`;
-      document.getElementById('nodeDesc').textContent = n.desc;
-      document.getElementById('liveCoords').textContent = n.coords;
-      pulseWave = 1.0;
-      playTone(760, 'sine', 0.1, 0.06);
-      addTerminalLog(n.label, n.desc);
+    function selectSector(idx) {
+      activeSectorIdx = idx;
+      const s = sectors[idx];
+      document.getElementById('sectorTitle').textContent = `ACTIVE SECTOR: ${s.name}`;
+      document.getElementById('sectorSummary').textContent = s.summary;
+      document.getElementById('activeCoords').textContent = s.coords;
+      document.querySelectorAll('.corridor-box').forEach((b, i) => {
+        b.classList.toggle('active', i === idx);
+      });
+      scanRing = 1.0;
+      pushLog(s.name.split(' ')[0], s.summary);
     }
 
-    function renderHolo(now) {
+    function drawVectorCanvas(now) {
       if (portalUnlocked) {
         const t = now * 0.001;
-        if (!isDragging) {
-          rotYAngle += 0.0075 * Math.cos(t * 0.25);
-          rotXAngle += 0.0055 * Math.sin(t * 0.32);
-          rotZAngle += 0.0035 * Math.sin(t * 0.19);
+        if (!draggingVec) {
+          pYaw += 0.0045;
         }
 
-        hCtx.clearRect(0, 0, hw, hh);
-        const cx = hw * 0.5;
-        const cy = hh * 0.5;
-        const scaleBase = Math.min(hw, hh) * 0.25;
-        const fov = 4.2;
+        vCtx.clearRect(0, 0, vw, vh);
+        const cx = vw * 0.5;
+        const cy = vh * 0.52;
+        const scale = Math.min(vw, vh) * 0.28;
 
-        for (let r = 1; r <= 3; r++) {
-          hCtx.strokeStyle = r === 2 ? 'rgba(0, 229, 209, 0.14)' : 'rgba(212, 175, 55, 0.14)';
-          hCtx.lineWidth = 1;
-          hCtx.beginPath();
-          hCtx.arc(cx, cy, scaleBase * (0.55 * r), 0, Math.PI * 2);
-          hCtx.stroke();
+        // Flat Architectural Grid
+        vCtx.strokeStyle = 'rgba(45, 37, 29, 0.7)';
+        vCtx.lineWidth = 1;
+        const step = 36;
+        for (let x = step; x < vw; x += step) {
+          vCtx.beginPath(); vCtx.moveTo(x, 0); vCtx.lineTo(x, vh); vCtx.stroke();
+        }
+        for (let y = step; y < vh; y += step) {
+          vCtx.beginPath(); vCtx.moveTo(0, y); vCtx.lineTo(vw, y); vCtx.stroke();
         }
 
-        const sweepAngle = (t * 1.15) % (Math.PI * 2);
-        const sweepGrad = hCtx.createRadialGradient(cx, cy, 4, cx, cy, scaleBase * 1.65);
-        sweepGrad.addColorStop(0, 'rgba(0, 229, 209, 0.18)');
-        sweepGrad.addColorStop(1, 'rgba(0, 229, 209, 0)');
-        hCtx.fillStyle = sweepGrad;
-        hCtx.beginPath();
-        hCtx.moveTo(cx, cy);
-        hCtx.arc(cx, cy, scaleBase * 1.65, sweepAngle, sweepAngle + 0.55);
-        hCtx.closePath();
-        hCtx.fill();
-
-        if (pulseWave > 0.01) {
-          const pr = (1 - pulseWave) * scaleBase * 1.9;
-          hCtx.strokeStyle = `rgba(245, 215, 127, ${pulseWave.toFixed(2)})`;
-          hCtx.lineWidth = 2.5;
-          hCtx.beginPath();
-          hCtx.arc(cx, cy, pr, 0, Math.PI * 2);
-          hCtx.stroke();
-          pulseWave *= 0.93;
+        // Expanding flat radar ring on click
+        if (scanRing > 0.02) {
+          vCtx.strokeStyle = `rgba(196, 154, 82, ${scanRing.toFixed(2)})`;
+          vCtx.lineWidth = 1.5;
+          vCtx.beginPath();
+          vCtx.arc(cx, cy, (1 - scanRing) * scale * 1.8, 0, Math.PI * 2);
+          vCtx.stroke();
+          scanRing *= 0.92;
         }
 
-        if (holoMode === 'hybrid' || holoMode === 'cube') {
-          const tVerts = gVerts.map(v => rZ(rY(rX(v, rotXAngle), rotYAngle), rotZAngle));
-          const pVerts = tVerts.map(p => {
-            const z = p[2] + fov;
-            const sc = (scaleBase * 0.72 * fov) / z;
-            return [cx + p[0] * sc, cy + p[1] * sc, p[2]];
+        // Project 3D Pyramid Wireframe
+        if (vectorMode === 'pyramid') {
+          const proj = pyrVerts.map(v => {
+            const p = rX(rY(v, pYaw), pPitch);
+            const z = p[2] + 3.8;
+            const f = (scale * 3.2) / z;
+            return [cx + p[0] * f, cy + p[1] * f];
           });
 
-          gFaces.forEach(face => {
-            const pts = face.map(i => pVerts[i]);
-            hCtx.fillStyle = 'rgba(24, 26, 32, 0.58)';
-            hCtx.beginPath();
-            hCtx.moveTo(pts[0][0], pts[0][1]);
-            hCtx.lineTo(pts[1][0], pts[1][1]);
-            hCtx.lineTo(pts[2][0], pts[2][1]);
-            hCtx.lineTo(pts[3][0], pts[3][1]);
-            hCtx.closePath();
-            hCtx.fill();
-          });
-
-          cubeEdges.forEach((edge, idx) => {
-            const a = pVerts[edge[0]];
-            const b = pVerts[edge[1]];
-            hCtx.strokeStyle = idx % 3 === 0 ? 'rgba(0, 229, 209, 0.65)' : 'rgba(245, 215, 127, 0.7)';
-            hCtx.lineWidth = 1.4;
-            hCtx.beginPath();
-            hCtx.moveTo(a[0], a[1]);
-            hCtx.lineTo(b[0], b[1]);
-            hCtx.stroke();
+          pyrEdges.forEach((e, i) => {
+            vCtx.strokeStyle = i >= 8 ? 'rgba(168, 88, 52, 0.65)' : 'rgba(196, 154, 82, 0.85)';
+            vCtx.lineWidth = i < 4 ? 1.5 : 1.1;
+            vCtx.beginPath();
+            vCtx.moveTo(proj[e[0]][0], proj[e[0]][1]);
+            vCtx.lineTo(proj[e[1]][0], proj[e[1]][1]);
+            vCtx.stroke();
           });
         }
 
-        if (holoMode === 'hybrid' || holoMode === 'constellation') {
-          projectedNodeHits = [];
-          const nodeScreen = menaNodes.map((n, idx) => {
-            const p = rZ(rY(rX(n.pos, rotXAngle * 0.6), rotYAngle * 0.6), rotZAngle * 0.4);
-            const z = p[2] + fov;
-            const sc = (scaleBase * 1.25 * fov) / z;
-            const sx = cx + p[0] * sc;
-            const sy = cy + p[1] * sc;
-            projectedNodeHits.push({ x: sx, y: sy, idx });
-            return { sx, sy, z: p[2], n, idx };
-          });
+        // Project MENA Sector Nodes
+        screenSectorNodes = [];
+        const nodePts = sectors.map((s, idx) => {
+          const p = rX(rY(s.pos, pYaw * 0.55), pPitch * 0.5);
+          const sx = cx + p[0] * scale * 1.45;
+          const sy = cy + p[1] * scale * 1.15;
+          screenSectorNodes.push({ x: sx, y: sy, idx });
+          return { sx, sy, s, idx };
+        });
 
-          for (let i = 0; i < nodeScreen.length; i++) {
-            for (let j = i + 1; j < nodeScreen.length; j++) {
-              const a = nodeScreen[i];
-              const b = nodeScreen[j];
-              hCtx.strokeStyle = (i === selectedNodeIndex || j === selectedNodeIndex)
-                ? 'rgba(245, 215, 127, 0.55)'
-                : 'rgba(0, 229, 209, 0.22)';
-              hCtx.lineWidth = (i === selectedNodeIndex || j === selectedNodeIndex) ? 1.5 : 0.9;
-              hCtx.beginPath();
-              const midX = (a.sx + b.sx) * 0.5;
-              const midY = (a.sy + b.sy) * 0.5 - 18;
-              hCtx.moveTo(a.sx, a.sy);
-              hCtx.quadraticCurveTo(midX, midY, b.sx, b.sy);
-              hCtx.stroke();
-            }
+        // Connect sector nodes with flat vector lines
+        vCtx.strokeStyle = 'rgba(196, 154, 82, 0.32)';
+        vCtx.lineWidth = 1;
+        vCtx.beginPath();
+        nodePts.forEach((pt, i) => {
+          if (i === 0) vCtx.moveTo(pt.sx, pt.sy);
+          else vCtx.lineTo(pt.sx, pt.sy);
+        });
+        vCtx.closePath();
+        vCtx.stroke();
+
+        nodePts.forEach(pt => {
+          const isSel = pt.idx === activeSectorIdx;
+          vCtx.fillStyle = isSel ? '#c49a52' : '#a85834';
+          vCtx.fillRect(pt.sx - 4, pt.sy - 4, 8, 8);
+
+          if (isSel) {
+            vCtx.strokeStyle = '#c49a52';
+            vCtx.strokeRect(pt.sx - 8, pt.sy - 8, 16, 16);
           }
 
-          nodeScreen.forEach(item => {
-            const isSel = item.idx === selectedNodeIndex;
-            const pulseR = isSel ? 9 + Math.sin(t * 5) * 3 : 5;
-
-            hCtx.fillStyle = isSel ? 'rgba(245, 215, 127, 0.28)' : 'rgba(0, 229, 209, 0.16)';
-            hCtx.beginPath();
-            hCtx.arc(item.sx, item.sy, pulseR * 1.7, 0, Math.PI * 2);
-            hCtx.fill();
-
-            hCtx.fillStyle = isSel ? '#f5d77f' : '#00e5d1';
-            hCtx.beginPath();
-            hCtx.arc(item.sx, item.sy, isSel ? 5.5 : 3.8, 0, Math.PI * 2);
-            hCtx.fill();
-
-            hCtx.font = isSel ? '700 11px "JetBrains Mono", monospace' : '500 10px "JetBrains Mono", monospace';
-            hCtx.fillStyle = isSel ? '#f5d77f' : '#e8dcc8';
-            hCtx.fillText(item.n.label, item.sx + 10, item.sy + 4);
-          });
-        }
+          vCtx.font = '500 10px "IBM Plex Mono", monospace';
+          vCtx.fillStyle = isSel ? '#e6dccb' : '#9c8e7b';
+          vCtx.fillText(`S0${pt.idx + 1}`, pt.sx + 12, pt.sy + 3);
+        });
       }
-      requestAnimationFrame(renderHolo);
+      requestAnimationFrame(drawVectorCanvas);
     }
-    requestAnimationFrame(renderHolo);
+    requestAnimationFrame(drawVectorCanvas);
 
-    document.querySelectorAll('[data-mode]').forEach(btn => {
+    document.querySelectorAll('[data-vmode]').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('[data-mode]').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('[data-vmode]').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        holoMode = btn.getAttribute('data-mode');
-        pulseWave = 1.0;
-        playTone(680, 'sine', 0.09, 0.05);
+        vectorMode = btn.getAttribute('data-vmode');
+        scanRing = 1.0;
       });
     });
 
-    document.getElementById('flashPulseHolo').addEventListener('click', () => {
-      triggerFlashBurst();
-      pulseWave = 1.0;
-      selectMenaNode((selectedNodeIndex + 1) % menaNodes.length);
+    document.getElementById('stepNodeBtn').addEventListener('click', () => {
+      selectSector((activeSectorIdx + 1) % sectors.length);
     });
 
-    document.getElementById('triggerPulseBtn').addEventListener('click', () => {
-      triggerFlashBurst();
-      pulseWave = 1.0;
+    document.getElementById('pulseMapBtn').addEventListener('click', () => {
+      scanRing = 1.0;
     });
 
-    const corridorMap = { levant: 0, gulf: 3, nile: 2, persia: 5 };
-    document.querySelectorAll('.corridor-card').forEach(card => {
-      card.addEventListener('click', () => {
-        document.querySelectorAll('.corridor-card').forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
-        const key = card.getAttribute('data-corridor');
-        if (corridorMap[key] !== undefined) {
-          selectMenaNode(corridorMap[key]);
-        }
+    document.querySelectorAll('.corridor-box').forEach(box => {
+      box.addEventListener('click', () => {
+        selectSector(+box.getAttribute('data-node'));
       });
     });
 
-    document.getElementById('scanAllCorridors').addEventListener('click', () => {
-      triggerFlashBurst();
-      let step = 0;
-      const cards = document.querySelectorAll('.corridor-card');
-      const scanTimer = setInterval(() => {
-        cards.forEach(c => c.classList.remove('selected'));
-        cards[step % cards.length].classList.add('selected');
-        selectMenaNode(step % menaNodes.length);
-        step++;
-        if (step >= menaNodes.length) clearInterval(scanTimer);
-      }, 650);
+    document.getElementById('cycleCorridorsBtn').addEventListener('click', () => {
+      let i = 0;
+      const timer = setInterval(() => {
+        selectSector(i % sectors.length);
+        i++;
+        if (i >= sectors.length) clearInterval(timer);
+      }, 550);
     });
 
     /* =========================================================================
-       7. TERMINAL DE CAMPO EM TEMPO REAL
+       6. SPIRITUAL TELEMETRY & FIELD LOG CONSOLE
        ========================================================================= */
-    const termLog = document.getElementById('terminalLog');
-    function addTerminalLog(sector, msg) {
-      const now = new Date();
-      const ts = now.toISOString().substring(11, 19);
-      const line = document.createElement('div');
-      line.className = 'log-line';
-      line.innerHTML = `<span class="ts">[${ts}]</span><span class="loc">[${sector}]</span><span>${msg}</span>`;
-      termLog.prepend(line);
-      while (termLog.children.length > 18) {
-        termLog.removeChild(termLog.lastChild);
-      }
+    let fullCommit = false;
+    document.getElementById('commitSpiritBtn').addEventListener('click', () => {
+      fullCommit = !fullCommit;
+      document.getElementById('spiritFill').style.width = fullCommit ? '100%' : '15%';
+      document.getElementById('spiritVal').textContent = fullCommit ? '100%' : '15%';
+      triggerFlatFlash();
+      pushLog('READINESS', fullCommit
+        ? 'Full surrender activated: 100% availability for the Holy Spirit across daily mission.'
+        : 'Telemetry reset to baseline diagnostic (15%).');
+    });
+
+    const feedEl = document.getElementById('consoleFeed');
+    function pushLog(tag, text) {
+      const ts = new Date().toISOString().substring(11, 19);
+      const item = document.createElement('div');
+      item.className = 'feed-entry';
+      item.innerHTML = `[${ts}] <strong>[${tag}]</strong> ${text}`;
+      feedEl.prepend(item);
+      while (feedEl.children.length > 15) feedEl.removeChild(feedEl.lastChild);
     }
 
-    const initialLogs = [
-      ['SYSTEM_BOOT', 'Rede ADVIR Oriente Médio inicializada com criptografia e proteção de dados.'],
-      ['LEVANTE_01', 'Módulos educacionais multilíngues sincronizados para abrigos locais.'],
-      ['PROJETO_167', 'Transmissão de discipulado e mobilização ativa nas 167 horas da semana.'],
-      ['SAFEGUARDING', 'Protocolo de proteção de identidade e verificação ética ativo em todos os nós.']
-    ];
-    initialLogs.forEach(([s, m]) => addTerminalLog(s, m));
+    [
+      ['SYSTEM', 'ADVIR Middle East Field Network initialized (minimal-data protocol).'],
+      ['GIZA_01', 'Leadership and community literacy modules active along the Nile corridor.'],
+      ['LEVANT_02', 'Low-bandwidth shelter education packs verified with local partner councils.'],
+      ['PROJETO_167', 'Daily mission readiness active across all 167 weekly hours.']
+    ].forEach(([t, m]) => pushLog(t, m));
 
-    const cmdMessages = {
-      assess: ['NEEDS_SCAN', 'Mapeamento comunitário concluído: prioridade para educação infantil e suporte médico no Levante.'],
-      verify: ['PARTNER_VERIFY', 'Validação cruzada concluída com conselho de parceiros locais — integridade 100% confirmada.'],
-      dispatch: ['RELIEF_ROUTE', 'Rota logística otimizada para kits de inverno e materiais didáticos sem coleta de dados pessoais.'],
-      prayer: ['INTERCESSION', 'Pulso de intercessão e apoio espiritual emitido para obreiros e famílias na Janela 10/40.']
+    const logActions = {
+      assess: ['ASSESS', 'Community needs assessment logged: shelter literacy and winter relief prioritized.'],
+      verify: ['VERIFY', 'Cross-checked field report with local partner council; zero duplicate records.'],
+      logistics: ['LOGISTICS', 'Clinic supply and education kit routing updated with minimal personal data.'],
+      safeguard: ['SAFEGUARD', 'Safeguarding audit passed: beneficiary identities protected by default.']
     };
 
-    document.querySelectorAll('[data-cmd]').forEach(btn => {
+    document.querySelectorAll('[data-log]').forEach(btn => {
       btn.addEventListener('click', () => {
-        const cmd = btn.getAttribute('data-cmd');
-        const entry = cmdMessages[cmd];
+        const entry = logActions[btn.getAttribute('data-log')];
         if (entry) {
-          playTone(720, 'triangle', 0.08, 0.05);
-          pulseWave = 1.0;
-          addTerminalLog(entry[0], entry[1]);
+          scanRing = 1.0;
+          pushLog(entry[0], entry[1]);
         }
       });
     });
 
     setInterval(() => {
-      document.getElementById('termClock').textContent = 'UTC ' + new Date().toISOString().substring(11, 19);
+      document.getElementById('utcClock').textContent = 'UTC ' + new Date().toISOString().substring(11, 19);
     }, 1000);
 
     /* =========================================================================
-       8. FORMULÁRIO INTEGRADO AO GOOGLE APPS SCRIPT REAL DO ADVIR
+       7. CONTACT FORM INTEGRATED WITH ADVIR GOOGLE APPS SCRIPT
        ========================================================================= */
     const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw1FpNQEtSkvFxhOSzVg4jWDIIHq_D_KxN3jtWk8dnS2ufDxlxP32nNPjBIuOX-IDLJtg/exec";
     const form = document.getElementById("contactForm");
@@ -2448,13 +1923,12 @@
       const message = (fd.get("message") || "").toString().trim();
 
       if (!email || !message || !subject) {
-        statusEl.textContent = "Preencha E-mail, Frente e Mensagem.";
+        statusEl.textContent = "Please fill in Email, Subject, and Message.";
         return;
       }
 
-      triggerFlashBurst();
-      statusEl.textContent = "⚡ TRANSMITINDO...";
-      addTerminalLog('UPLINK_TX', `Transmitindo mensagem segura de ${name} (${subject})...`);
+      statusEl.textContent = "Sending...";
+      pushLog('TRANSMISSION', `Sending inquiry from ${name} (${subject})...`);
 
       const combinedMessage = "Name: " + name + "\nSubject: " + subject + "\n\n" + message;
 
@@ -2465,7 +1939,7 @@
           body: new URLSearchParams({
             formType: "register_interest",
             area: subject,
-            availability: "Website contact (MENA Tech Portal)",
+            availability: "Website contact (MENA Flat Portal)",
             message: combinedMessage,
             email: email,
             phone: phone,
@@ -2476,11 +1950,11 @@
           })
         });
 
-        statusEl.textContent = "✔ TRANSMISSÃO ENVIADA COM SUCESSO!";
-        addTerminalLog('UPLINK_OK', 'Mensagem recebida pela central ADVIR.');
+        statusEl.textContent = "Sent. Thank you.";
+        pushLog('TRANSMISSION', 'Message delivered to ADVIR coordination.');
         form.reset();
       } catch (err) {
-        statusEl.textContent = "Falha na transmissão. Tente novamente.";
+        statusEl.textContent = "Failed to send. Please try again.";
       }
     });
   </script>
