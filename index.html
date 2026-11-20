@@ -40,17 +40,21 @@
     html, body {
       width: 100%;
       min-height: 100vh;
+      min-height: 100dvh;
       background-color: var(--bg-black);
       color: var(--sand-primary);
       font-family: var(--font-sans);
       overflow-x: hidden;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
     }
 
     body.cube-locked {
       overflow: hidden;
       height: 100vh;
+      height: 100dvh;
+      touch-action: none;
     }
 
     /* =========================================================================
@@ -61,6 +65,7 @@
       inset: 0;
       width: 100vw;
       height: 100vh;
+      height: 100dvh;
       background-color: #000000;
       z-index: 500;
       display: flex;
@@ -68,6 +73,8 @@
       justify-content: center;
       overflow: hidden;
       user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
       transition: opacity 0.65s ease, visibility 0.65s ease;
     }
 
@@ -98,6 +105,8 @@
       position: relative;
       z-index: 2;
       display: block;
+      touch-action: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
     /* Subtle flat flash transition */
@@ -123,6 +132,7 @@
       pointer-events: none;
       transition: opacity 0.7s ease, visibility 0.7s ease;
       min-height: 100vh;
+      min-height: 100dvh;
       background-color: var(--bg-basalt);
       position: relative;
     }
@@ -137,6 +147,9 @@
     .pyramids-backdrop {
       position: fixed;
       inset: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
       z-index: 0;
       pointer-events: none;
       background-color: var(--bg-basalt);
@@ -167,6 +180,7 @@
       inset: 0;
       width: 100vw;
       height: 100vh;
+      height: 100dvh;
       z-index: 1;
       pointer-events: none;
     }
@@ -193,8 +207,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      height: 68px;
-      flex-wrap: wrap;
+      min-height: 68px;
+      flex-wrap: nowrap;
     }
 
     .brand {
@@ -203,6 +217,7 @@
       gap: 12px;
       text-decoration: none;
       color: var(--sand-primary);
+      flex-shrink: 0;
     }
 
     .brand-mark {
@@ -212,6 +227,7 @@
       border: 1px solid var(--border-accent);
       display: grid;
       place-items: center;
+      flex-shrink: 0;
     }
 
     .brand-mark svg {
@@ -251,6 +267,7 @@
       font-weight: 500;
       padding: 7px 14px;
       border: 1px solid transparent;
+      white-space: nowrap;
       transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
     }
 
@@ -264,6 +281,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-shrink: 0;
     }
 
     .lang-group {
@@ -297,6 +315,7 @@
       font-size: 0.72rem;
       padding: 6px 12px;
       cursor: pointer;
+      white-space: nowrap;
       transition: all 0.15s ease;
     }
 
@@ -336,6 +355,7 @@
       height: 7px;
       background-color: var(--ochre-matte);
       display: inline-block;
+      flex-shrink: 0;
     }
 
     .matte-dot.olive {
@@ -373,7 +393,7 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+      font-size: clamp(1.65rem, 3.2vw, 2.75rem);
       font-weight: 600;
       line-height: 1.16;
       color: var(--sand-primary);
@@ -402,6 +422,7 @@
     .btn-flat {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       padding: 12px 20px;
       font-family: var(--font-mono);
@@ -482,6 +503,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
       font-family: var(--font-mono);
       font-size: 0.72rem;
       color: var(--sand-secondary);
@@ -498,12 +521,15 @@
       border: 1px solid var(--border-matte);
       overflow: hidden;
       cursor: crosshair;
+      touch-action: none;
     }
 
     #menaVectorCanvas {
       width: 100%;
       height: 100%;
       display: block;
+      touch-action: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .stage-controls {
@@ -513,6 +539,7 @@
       right: 10px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 6px;
       pointer-events: none;
     }
@@ -526,6 +553,7 @@
       font-size: 0.68rem;
       padding: 5px 10px;
       cursor: pointer;
+      white-space: nowrap;
     }
 
     .mode-tab.active, .mode-tab:hover {
@@ -544,6 +572,7 @@
     .sector-readout-top {
       display: flex;
       justify-content: space-between;
+      gap: 8px;
       font-family: var(--font-mono);
       font-size: 0.73rem;
       color: var(--ochre-matte);
@@ -650,6 +679,8 @@
     .bar-label {
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
       font-size: 0.86rem;
       color: var(--sand-primary);
       margin-bottom: 6px;
@@ -658,6 +689,7 @@
     .bar-label span.mono {
       font-family: var(--font-mono);
       color: var(--ochre-matte);
+      flex-shrink: 0;
     }
 
     .bar-outer {
@@ -696,6 +728,8 @@
       border-bottom: 1px solid var(--border-matte);
       display: flex;
       justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
       font-family: var(--font-mono);
       font-size: 0.72rem;
       color: var(--sand-secondary);
@@ -717,6 +751,7 @@
       border-left: 2px solid var(--ochre-matte);
       padding-left: 10px;
       line-height: 1.45;
+      word-break: break-word;
     }
 
     .feed-entry strong {
@@ -795,6 +830,9 @@
       font-family: var(--font-sans);
       font-size: 0.9rem;
       outline: none;
+      border-radius: 0;
+      -webkit-appearance: none;
+      appearance: none;
     }
 
     .flat-input:focus {
@@ -820,6 +858,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 12px;
       font-size: 0.86rem;
     }
 
@@ -827,6 +866,7 @@
       font-family: var(--font-mono);
       font-size: 0.72rem;
       color: var(--sand-secondary);
+      flex-shrink: 0;
     }
 
     footer {
@@ -848,6 +888,15 @@
       color: var(--sand-secondary);
     }
 
+    /* =========================================================================
+       RESPONSIVE ARCHITECTURE — TABLET & MOBILE FIRST REFINEMENTS
+       ========================================================================= */
+    @media (max-width: 1080px) {
+      .brand-sub {
+        display: none;
+      }
+    }
+
     @media (max-width: 980px) {
       .hero-grid,
       .two-col {
@@ -861,14 +910,310 @@
       }
     }
 
+    /* Mobile & Tablet Navigation Bar (<= 860px) */
+    @media (max-width: 860px) {
+      .nav-inner {
+        height: auto;
+        min-height: 0;
+        flex-wrap: wrap;
+        padding: 10px 0 0;
+        gap: 10px 12px;
+      }
+      .brand {
+        order: 1;
+        gap: 10px;
+      }
+      .nav-actions {
+        order: 2;
+        margin-left: auto;
+        gap: 6px;
+      }
+      .nav-menu {
+        order: 3;
+        width: calc(100% + 32px);
+        margin: 0 -16px;
+        padding: 8px 16px;
+        border-top: 1px solid var(--border-matte);
+        background-color: #110e0b;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+        gap: 6px;
+      }
+      .nav-menu::-webkit-scrollbar {
+        display: none;
+      }
+      .nav-item {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        font-size: 0.78rem;
+        padding: 7px 12px;
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+        background-color: var(--bg-surface);
+        border-color: var(--border-matte);
+      }
+      .lang-btn {
+        padding: 7px 9px;
+        min-height: 36px;
+      }
+      .flat-btn-sm {
+        padding: 7px 10px;
+        min-height: 36px;
+      }
+    }
+
+    /* iOS Safari Zoom Prevention & Giza Backdrop Framing (<= 768px) */
+    @media (max-width: 768px) {
+      .flat-input {
+        font-size: 16px;
+        min-height: 44px;
+      }
+      .pyramids-backdrop {
+        background-position: 58% 32%;
+      }
+      .pyramids-vector-horizon {
+        height: min(26vh, 210px);
+      }
+      .gate-ambient-light {
+        width: min(82vw, 380px);
+        height: min(82vw, 380px);
+      }
+    }
+
+    /* Smartphone Optimization (320px — 640px) */
     @media (max-width: 640px) {
-      .corridors-grid,
-      .metrics-bar,
-      .form-grid {
-        grid-template-columns: 1fr;
+      .container {
+        padding: 0 16px;
+      }
+      .brand-sub {
+        display: none;
+      }
+      .brand-mark {
+        width: 32px;
+        height: 32px;
+      }
+      .brand-title {
+        font-size: 1.05rem;
+        letter-spacing: 2px;
+      }
+      .status-strip {
+        padding: 7px 0;
+        font-size: 0.66rem;
+      }
+      .status-strip-inner {
+        flex-wrap: nowrap;
+        gap: 10px;
+      }
+      .status-strip-inner .status-indicator:first-child {
+        min-width: 0;
+        flex: 1;
+      }
+      .status-strip-inner .status-indicator:first-child span:last-child {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+      }
+      .status-strip-inner .status-indicator:last-child {
+        flex-shrink: 0;
+      }
+      .hero {
+        padding: 22px 0 24px;
+      }
+      .hero-grid {
+        gap: 18px;
       }
       .flat-panel {
         padding: 20px;
+      }
+      .kicker {
+        font-size: 0.68rem;
+        letter-spacing: 1.4px;
+        margin-bottom: 10px;
+      }
+      .hero-title {
+        font-size: clamp(1.5rem, 6.2vw, 2.05rem);
+        line-height: 1.2;
+        margin-bottom: 14px;
+      }
+      .hero-lead {
+        font-size: 0.92rem;
+        margin-bottom: 20px;
+      }
+      /* Hero CTA Layout: Primary 100% Top, 2 Secondary 50%/50% Below */
+      .btn-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 22px;
+      }
+      .btn-row .btn-flat {
+        width: 100%;
+        min-height: 46px;
+        padding: 10px 10px;
+        font-size: 0.72rem;
+        text-align: center;
+        justify-content: center;
+        line-height: 1.25;
+      }
+      .btn-row .btn-flat.primary {
+        grid-column: 1 / -1;
+        font-size: 0.78rem;
+      }
+      /* Compact 3-Column Metrics Bar on Mobile */
+      .metrics-bar {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding-top: 18px;
+      }
+      .metric-cell {
+        padding: 10px 8px;
+      }
+      .metric-num {
+        font-size: 1.02rem;
+        line-height: 1.2;
+        white-space: nowrap;
+      }
+      .metric-caption {
+        font-size: 0.64rem;
+        letter-spacing: 0.3px;
+        line-height: 1.25;
+        margin-top: 3px;
+      }
+      /* Tactical Pyramid & MENA Vector Panel */
+      .tactical-panel {
+        padding: 16px;
+      }
+      .tactical-head {
+        font-size: 0.66rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+      }
+      .tactical-stage {
+        height: 270px;
+      }
+      .stage-controls {
+        bottom: 8px;
+        left: 8px;
+        right: 8px;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .stage-controls .mode-tab {
+        font-size: 0.63rem;
+        padding: 6px 8px;
+        min-height: 34px;
+        display: inline-flex;
+        align-items: center;
+      }
+      .sector-readout {
+        padding: 12px;
+      }
+      .sector-readout-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      /* Sections, Corridors, Telemetry, Console, Contact */
+      .section {
+        padding: 28px 0;
+      }
+      .section-head {
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+      }
+      .section-title {
+        font-size: 1.38rem;
+      }
+      #cycleCorridorsBtn {
+        width: 100%;
+        min-height: 44px;
+      }
+      .corridors-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .corridor-box,
+      .pillar-box {
+        padding: 18px;
+      }
+      .console-top {
+        font-size: 0.66rem;
+        padding: 10px 14px;
+      }
+      .console-feed {
+        height: 220px;
+        padding: 14px;
+        font-size: 0.73rem;
+      }
+      .console-foot {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 12px 14px;
+      }
+      .console-foot .mode-tab {
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .telemetry-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+      .telemetry-actions .btn-flat {
+        width: 100%;
+        min-height: 46px;
+        justify-content: center;
+        text-align: center;
+      }
+      .form-submit-row .btn-flat {
+        width: 100%;
+        min-height: 46px;
+        justify-content: center;
+      }
+      .contact-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        word-break: break-word;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+    }
+
+    /* Extra-Small Screens (320px — 360px) */
+    @media (max-width: 360px) {
+      .lang-btn {
+        padding: 6px 7px;
+        font-size: 0.68rem;
+      }
+      .flat-btn-sm {
+        padding: 6px 8px;
+        font-size: 0.68rem;
+      }
+      .metric-num {
+        font-size: 0.92rem;
+      }
+      .metric-cell {
+        padding: 8px 6px;
+      }
+      .btn-row .btn-flat {
+        font-size: 0.68rem;
+        padding: 8px 6px;
       }
     }
   </style>
@@ -891,7 +1236,7 @@
   <div id="missionPortal" aria-hidden="true">
     <!-- Giza Pyramids Background & Vector Horizon -->
     <div class="pyramids-backdrop"></div>
-    <svg class="pyramids-vector-horizon" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <svg class="pyramids-vector-horizon" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice">
       <!-- Matte Giza Pyramids Architectural Silhouette & Technical Grid Lines -->
       <polygon points="180,320 450,75 720,320" fill="#16120e" stroke="#3a2e21" stroke-width="1" />
       <polygon points="450,75 450,320 720,320" fill="#120e0b" />
@@ -1140,7 +1485,7 @@
               </div>
             </div>
 
-            <div style="margin-top:22px; display:flex; gap:10px; flex-wrap:wrap">
+            <div class="telemetry-actions" style="margin-top:22px; display:flex; gap:10px; flex-wrap:wrap">
               <button class="btn-flat primary" id="commitSpiritBtn" data-i18n="btn_commit">
                 Activate Full Surrender (100%)
               </button>
@@ -1270,7 +1615,7 @@
                 <textarea id="fMessage" name="message" class="flat-input" placeholder="Write your message..." required></textarea>
               </div>
 
-              <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:14px">
+              <div class="form-submit-row" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:14px">
                 <button type="submit" class="btn-flat primary">
                   Send Message
                 </button>
@@ -1379,8 +1724,9 @@
 
         const cx = gw * 0.5;
         const cy = gh * 0.5;
-        const cubeScale = Math.min(gw, gh) * 0.135;
-        cubeHitRadius = cubeScale * 1.45;
+        const isMobileGate = gw < 640;
+        const cubeScale = Math.min(gw, gh) * (isMobileGate ? 0.22 : 0.135);
+        cubeHitRadius = cubeScale * (isMobileGate ? 1.85 : 1.45);
         const camDist = 4.8;
 
         // Soft background light halo
@@ -1462,13 +1808,23 @@
       gateCanvas.style.cursor = hoveringCube ? 'pointer' : 'default';
     });
 
-    gateCanvas.addEventListener('pointerdown', e => {
-      const dx = e.clientX - gw * 0.5;
-      const dy = e.clientY - gh * 0.5;
-      if (Math.hypot(dx, dy) <= cubeHitRadius * 1.15) {
+    function handleGateTap(clientX, clientY) {
+      const dx = clientX - gw * 0.5;
+      const dy = clientY - gh * 0.5;
+      if (Math.hypot(dx, dy) <= cubeHitRadius * 1.2) {
         unlockPortal();
       }
+    }
+
+    gateCanvas.addEventListener('pointerdown', e => {
+      handleGateTap(e.clientX, e.clientY);
     });
+
+    gateCanvas.addEventListener('touchstart', e => {
+      if (e.touches && e.touches.length > 0) {
+        handleGateTap(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
 
     function triggerFlatFlash() {
       flatFlash.classList.add('active');
@@ -1700,8 +2056,9 @@
       const rect = vecCanvas.getBoundingClientRect();
       const mx = e.clientX - rect.left;
       const my = e.clientY - rect.top;
+      const hitRadius = vw < 500 ? 34 : 24;
       for (const sn of screenSectorNodes) {
-        if (Math.hypot(mx - sn.x, my - sn.y) < 24) {
+        if (Math.hypot(mx - sn.x, my - sn.y) < hitRadius) {
           selectSector(sn.idx);
           break;
         }
@@ -1716,6 +2073,7 @@
       lastVY = e.clientY;
     });
     window.addEventListener('pointerup', () => { draggingVec = false; });
+    window.addEventListener('pointercancel', () => { draggingVec = false; });
 
     function selectSector(idx) {
       activeSectorIdx = idx;
@@ -1738,9 +2096,10 @@
         }
 
         vCtx.clearRect(0, 0, vw, vh);
+        const isMobileStage = vw < 500;
         const cx = vw * 0.5;
-        const cy = vh * 0.52;
-        const scale = Math.min(vw, vh) * 0.28;
+        const cy = vh * (isMobileStage ? 0.45 : 0.52);
+        const scale = Math.min(vw, vh) * (isMobileStage ? 0.25 : 0.28);
 
         // Flat Architectural Grid
         vCtx.strokeStyle = 'rgba(45, 37, 29, 0.7)';
